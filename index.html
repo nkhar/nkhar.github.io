@@ -1,1 +1,255 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Colors -->
+    <!-- #2e3190 -->
+    <!-- rgb(46,49,144) -->
+
+    <title>FAI</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        color: black;
+      }
+
+      .container {
+        display: flex;
+        width: 800px;
+
+        margin: 0 auto;
+      }
+
+      .container-navigation {
+        display: flex;
+        width: 800px;
+        justify-content: space-between;
+
+        padding: 30px;
+      }
+
+      .header-container {
+        width: 800px;
+        height: 100vh;
+        margin: 0 auto;
+        background-image: url(logo.jpg);
+        color: white;
+      }
+
+      .link:link,
+      .link:visited {
+        text-decoration: none;
+        background-color: #fff;
+        color: #103190;
+        padding: 10px;
+
+        border-radius: 10%;
+      }
+      .link:active,
+      .link:hover {
+      }
+
+      .doctors {
+      }
+      .doctor-item {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        background-color: #2e3190;
+        color: #fff;
+
+        border-radius: 10px;
+
+        padding: 10px 20px;
+        margin-top: 20px;
+      }
+
+      .services {
+      }
+
+      h2 {
+        padding: 20px 0;
+        display: inline-block;
+      }
+
+      .services-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 10px;
+        column-gap: 10px;
+      }
+
+      .service-item {
+        display: flex;
+
+        flex-direction: column;
+        padding: 20px;
+        background-color: aliceblue;
+      }
+
+      footer {
+        margin-top: 20px;
+        padding: 50px;
+        background-color: blueviolet;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-container">
+      <nav class="container container-navigation">
+        <a href="#" class="link">Home</a>
+        <a href="#" class="link">Our story</a>
+        <a href="#" class="link">Services</a>
+        <a href="#" class="link">Testimonials</a>
+        <a href="#" class="link">Contact</a>
+      </nav>
+      <h1>Georgia Foot and Ankle Institute</h1>
+    </header>
+    <div class="container abous-us">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+        molestiae accusamus nesciunt voluptates similique, rerum id quasi. Dolor
+        maiores vel earum a, aspernatur, id excepturi illum ipsa corrupti qui
+        quas?
+      </p>
+    </div>
+
+    <div class="container doctors">
+      <ul class="doctor-list">
+        <li class="doctor-item">
+          <img src="jemal-chumburidze.jpg" alt="" />
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet,
+            id vero earum voluptate iste nemo! Nesciunt reprehenderit deserunt,
+            minus mollitia eum illum veritatis harum, magni tenetur aspernatur
+            itaque, labore animi?
+          </p>
+        </li>
+        <li class="doctor-item">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+            illo magnam, vero incidunt accusantium, veritatis facilis at
+            molestias laudantium eveniet quod ipsam maxime fugit magni
+            recusandae consectetur aperiam quos porro.
+          </p>
+          <img src="mikheil-janjgava.jfif" alt="" />
+        </li>
+        <li class="doctor-item">
+          <img src="dr-daniel.jpg" alt="" />
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
+            voluptate corporis, rerum dolorem exercitationem quos distinctio
+            quam laudantium dolor et? Eum nihil necessitatibus eius iusto libero
+            consectetur ipsa quidem a.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <h2 class="container">Services</h2>
+
+    <div class="services container">
+      <ul class="services-list">
+        <li class="service-item">
+          <h4>Heel Pain</h4>
+          <p>
+            Heel pain can be excruciating. Learn more about causes of heel pain
+            and available treatment.
+          </p>
+        </li>
+        <li class="service-item">
+          <h4>Ingrown Toenail</h4>
+          <p>
+            A common issue that affects patients of all ages. Learn about
+            solutions for recurring ingrown toe-nails!
+          </p>
+        </li>
+        <li class="service-item">
+          <h4>Bunions</h4>
+          <p>
+            Painful bunions can cause severe and constant pain. Learn about
+            bunions and treatment options.
+          </p>
+        </li>
+        <li class="service-item">
+          <h4>Nail Fungus</h4>
+          <p>
+            Toenail deformity, thickening and discoloration can be as a results
+            of fungal infection. Learn more about fungal nail.
+          </p>
+        </li>
+
+        <li class="service-item">
+          <h4>Ankle Pain</h4>
+          <p>
+            Injuries to ligaments, tendons and joints commonly cause ankle pain.
+            Learn more about solutions to ankle pain.
+          </p>
+        </li>
+        <li class="service-item">
+          <h4>Athlete Foot</h4>
+          <p>
+            Common fungal infection of the skin can be unsightly. Learn more
+            about treatment options and maintenance.
+          </p>
+        </li>
+        <li class="service-item">
+          <h4>Wound Care</h4>
+          <p>
+            Chronic ulcers & wounds can affect patients' quality of life
+            negatively. Learn more about our treatment options.
+          </p>
+        </li>
+        <li class="service-item">
+          <h4>Diabetic Foot</h4>
+          <p>
+            Learn more about Diabetes and our professional contribution to the
+            well being of our patients.
+          </p>
+        </li>
+
+        <li class="service-item">
+          <h4>Injuries</h4>
+          <p>
+            Learn more about Injuries and our professional contribution to the
+            well being of our patients.
+          </p>
+        </li>
+        <li class="service-item">
+          <h4>Infection</h4>
+          <p>
+            Learn more about Infection and our professional contribution to the
+            well being of our patients.
+          </p>
+        </li>
+        <li class="service-item">
+          <h4>Pediatric</h4>
+          <p>
+            Learn more about Pediatric care and our professional contribution to
+            the well being of our patients.
+          </p>
+        </li>
+        <li class="service-item">
+          <h4>Surgeries</h4>
+          <p>
+            Learn more about Surgeries and our professional contribution to the
+            well being of our patients.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <footer>&copy; Georgian Foot and Ankle Institute 2022</footer>
+  </body>
+</html>
