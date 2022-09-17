@@ -149,11 +149,15 @@
         background-color: aliceblue;
       }
 
+      .map {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
       footer {
-        width: 800px;
-        margin-top: 20px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-top: 60px;
         padding: 50px;
         background-color: blueviolet;
         color: #fff;
@@ -321,6 +325,22 @@
           </p>
         </li>
       </ul>
+    </section>
+
+    <section class="map">
+      <h2>Address</h2>
+      <h3>Bezhan Kalandadze St. 26, tel: 2752996 or 2752908</h3>
+      <div class="actual-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2858.4168904043204!2d44.81897846422817!3d41.6816249651505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x283715d38dd5938c!2z4YOi4YOU4YOg4YOk4YOY4YOhIOGDk-GDkCDhg5nhg53hg63hg6zhg5Xhg5jhg5Xhg5jhg6Eg4YOh4YOQ4YOu4YOh4YOg4YOY4YOhIOGDmOGDnOGDoeGDouGDmOGDouGDo-GDouGDmA!5e0!3m2!1sen!2sge!4v1663442844114!5m2!1sen!2sge"
+          width="800"
+          height="600"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
     </section>
 
     <footer>&copy; Georgian Foot and Ankle Institute 2022</footer>
