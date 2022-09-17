@@ -39,8 +39,17 @@
         font-size: 20px;
         font-weight: 700;
         display: flex;
+        gap: 20px;
         justify-content: space-between;
         padding: 30px;
+      }
+
+      .languages {
+        display: flex;
+        gap: 10px;
+
+        align-items: center;
+        justify-content: center;
       }
 
       .nav-sticky {
@@ -54,6 +63,10 @@
         background-color: rgba(34, 34, 34, 0.9);
 
         transition: 1s;
+      }
+
+      .nav-sticky div.languages {
+        margin-left: auto;
       }
 
       header {
@@ -181,12 +194,30 @@
   </head>
   <body>
     <header>
-      <nav id="navbar">
-        <a href="#" class="link" id="nav-item-home">Home</a>
-        <a href="#" class="link">Our story</a>
-        <a href="#" class="link">Services</a>
-        <a href="#" class="link">Testimonials</a>
-        <a href="#" class="link">Contact</a>
+      <nav>
+        <a href="#" class="link" local-link="main">Home</a>
+        <a href="#" class="link" local-link="about">Our story</a>
+        <a href="#" class="link" local-link="services">Services</a>
+        <a href="#" class="link" local-link="testimonials">Testimonials</a>
+        <a href="#" class="link" local-link="contact">Contact</a>
+
+        <div class="languages">
+          <div class="georgian active">
+            <a href="#" language="georgian">
+              <img src="images/language-georgia.png" alt="" />
+            </a>
+          </div>
+          <div class="english">
+            <a href="#" language="english">
+              <img src="images/language-britain.png" alt="" />
+            </a>
+          </div>
+          <div class="russian">
+            <a href="#" language="russian">
+              <img src="images/language-russia.png" alt="" />
+            </a>
+          </div>
+        </div>
       </nav>
 
       <div class="header-container">
@@ -361,8 +392,8 @@
     <footer>&copy; Georgian Foot and Ankle Institute 2022</footer>
 
     <script>
-      var navbar = document.getElementById("navbar");
-      var menuItemHome = document.getElementById("nav-item-home");
+      var navbar = document.querySelector("nav");
+      var menuItemHome = document.querySelector("nav>a:first-child");
 
       window.onscroll = function () {
         if (window.pageYOffset >= menuItemHome.offsetTop) {
@@ -370,6 +401,96 @@
         } else {
           navbar.classList.remove("nav-sticky");
         }
+      };
+
+      const menuLinks = document.querySelectorAll("nav>a");
+
+      const aboutUsSection = document.querySelector("section.about-us");
+      const servicesSection = document.querySelector("section.services");
+      const mapSection = document.querySelector("section.map");
+
+      menuLinks.forEach((el) => {
+        el.addEventListener("click", () => {
+          const menuItemCLicked = el.getAttribute("local-link");
+
+          var sectionToScroll = aboutUsSection;
+          if (menuItemCLicked === "main") {
+            sectionToScroll = aboutUsSection;
+          }
+          if (menuItemCLicked === "about") {
+            sectionToScroll = aboutUsSection;
+          }
+          if (menuItemCLicked === "services") {
+            sectionToScroll = servicesSection;
+          }
+          if (menuItemCLicked === "testimonials") {
+            sectionToScroll = servicesSection;
+          }
+          if (menuItemCLicked === "contact") {
+            sectionToScroll = mapSection;
+          }
+
+          setTimeout(function () {
+            sectionToScroll.scrollIntoView(true, {
+              behavior: "smooth",
+            });
+          }, 100);
+        });
+      });
+
+      const langEl = document.querySelector(".languages");
+      const languageDivs = document.querySelectorAll(".languages div");
+      const titleEl = document.querySelector(".header-container>h1");
+
+      const homeMenuEl = document.querySelector("nav>.link:nth-child(1)");
+      const aboutMenuEl = document.querySelector("nav>.link:nth-child(2)");
+      const servicesMenuEl = document.querySelector("nav>.link:nth-child(3)");
+      const testimonialsMenuEl = document.querySelector(
+        "nav>.link:nth-child(4)"
+      );
+      const contactMenuEl = document.querySelector("nav>.link:nth-child(5)");
+
+      languageDivs.forEach((el) => {
+        el.addEventListener("click", () => {
+          langEl.querySelector(".active").classList.remove("active");
+          el.classList.add("active");
+
+          const attrLanguage = el.querySelector("a").getAttribute("language");
+
+          titleEl.textContent = data[attrLanguage].title;
+          homeMenuEl.textContent = data[attrLanguage].home;
+          aboutMenuEl.textContent = data[attrLanguage].about;
+          servicesMenuEl.textContent = data[attrLanguage].services;
+          testimonialsMenuEl.textContent = data[attrLanguage].testimonials;
+          contactMenuEl.textContent = data[attrLanguage].contact;
+        });
+      });
+
+      var data = {
+        georgian: {
+          title: "ტერფის და კოჭწვივის სახსრის ინსტიტუტი",
+          home: "მთავარი",
+          about: "ჩვენ შესახებ",
+          services: "სერვისები",
+          testimonials: "გამოხმაურება",
+          contact: "კონტაქტი",
+        },
+        english: {
+          title: "Georgia Foot and Ankle Institute",
+          home: "Home",
+          about: "Our story",
+          services: "Services",
+          testimonials: "Testimonials",
+          contact: "Contact",
+        },
+        russian: {
+          title: "Gruzinski Universitet...",
+          home: "Glavnoe",
+          about: "Nasha Istoria",
+          services: "Servisi",
+          testimonials: "O Nas",
+          contact: "Kontaqt",
+        },
       };
     </script>
   </body>
