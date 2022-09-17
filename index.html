@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Colors -->
     <!-- #2e3190 -->
     <!-- rgb(46,49,144) -->
@@ -18,45 +23,77 @@
         box-sizing: border-box;
       }
 
-      body {
-        font-family: sans-serif;
-        color: black;
+      html {
+        font-family: "Rubik", sans-serif;
+        color: #444;
       }
 
       .container {
-        display: flex;
         width: 800px;
-
         margin: 0 auto;
       }
 
-      .container-navigation {
+      nav {
+        font-size: 20px;
+        font-weight: 700;
         display: flex;
-        width: 800px;
         justify-content: space-between;
-
         padding: 30px;
       }
 
-      .header-container {
-        width: 800px;
+      header {
+        position: relative;
+
+        width: 100vw;
         height: 100vh;
         margin: 0 auto;
-        background-image: url(logo.jpg);
-        color: white;
+        background-image: linear-gradient(
+            to right,
+            rgba(34, 34, 34, 0.6),
+            rgba(34, 34, 34, 0.6)
+          ),
+          url(images/road-1.jpeg);
+        background-size: cover;
+        color: #fff;
+      }
+
+      .header-container {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      h1 {
+        font-size: 62px;
+        margin-bottom: 32px;
+        line-height: 1.15;
+      }
+
+      h2 {
+        padding: 0;
+
+        font-size: 40px;
+        margin-top: 60px;
+        margin-bottom: 20px;
+
+        display: inline-block;
       }
 
       .link:link,
       .link:visited {
         text-decoration: none;
-        background-color: #fff;
-        color: #103190;
+        color: #fff;
         padding: 10px;
-
+        display: inline-block;
         border-radius: 10%;
       }
       .link:active,
       .link:hover {
+      }
+
+      .about-us p {
+        font-size: 20px;
       }
 
       .doctors {
@@ -66,29 +103,42 @@
         gap: 20px;
         align-items: center;
         /* background-color: #2e3190; */
-        background-color: #2e3160;
-
-        color: #fff;
+        /* background-color: #87a2fb; */
+        /* background-color: #eef1ff; */
+        background-color: #4cacbc;
 
         border-radius: 10px;
 
-        padding: 10px 20px;
+        padding: 0 0 0 0;
         margin-top: 20px;
+      }
+
+      .doctor-item:first-child {
+        margin-top: 0;
+      }
+
+      .doctor-item img {
+        width: 300px;
+        border-radius: 10px;
+      }
+
+      .doctor-item p {
+        color: #fff;
+        font-size: 20px;
+      }
+
+      .doctor-item:nth-child(2) p {
+        margin-left: 30px;
       }
 
       .services {
       }
 
-      h2 {
-        padding: 20px 0;
-        display: inline-block;
-      }
-
       .services-list {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        row-gap: 10px;
-        column-gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        row-gap: 20px;
+        column-gap: 20px;
       }
 
       .service-item {
@@ -100,7 +150,10 @@
       }
 
       footer {
+        width: 800px;
         margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
         padding: 50px;
         background-color: blueviolet;
         color: #fff;
@@ -108,29 +161,47 @@
     </style>
   </head>
   <body>
-    <header class="header-container">
-      <nav class="container container-navigation">
+    <header>
+      <nav class="container">
         <a href="#" class="link">Home</a>
         <a href="#" class="link">Our story</a>
         <a href="#" class="link">Services</a>
         <a href="#" class="link">Testimonials</a>
         <a href="#" class="link">Contact</a>
       </nav>
-      <h1>Georgia Foot and Ankle Institute</h1>
+
+      <div class="header-container">
+        <h1>Georgia Foot and Ankle Institute</h1>
+      </div>
     </header>
-    <div class="container abous-us">
+
+    <section class="container about-us">
+      <h2>About Us</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
         molestiae accusamus nesciunt voluptates similique, rerum id quasi. Dolor
         maiores vel earum a, aspernatur, id excepturi illum ipsa corrupti qui
-        quas?
+        quas? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
       </p>
-    </div>
+      <div>&nbsp;</div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur,
+        veritatis ullam. Minus saepe dolores omnis adipisci optio incidunt nam
+        suscipit corrupti numquam magnam? Ipsum iusto quia, vitae maiores
+        perferendis ullam! Odio voluptates non odit voluptatum quis beatae
+        delectus repellat eaque labore nobis! Alias distinctio optio ab, et est
+        vitae doloremque ipsam quos? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Non molestias placeat perferendis quis hic libero
+        eligendi officia, veniam obcaecati exercitationem. Reprehenderit modi
+        earum, nulla quidem alias iure enim quae a!
+      </p>
+    </section>
 
-    <div class="container doctors">
+    <section class="container doctors">
+      <h2>Doctors</h2>
       <ul class="doctor-list">
         <li class="doctor-item">
-          <img src="jemal-chumburidze.jpg" alt="" />
+          <img src="images/dr-chumburidze.jpeg" alt="" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet,
             id vero earum voluptate iste nemo! Nesciunt reprehenderit deserunt,
@@ -145,10 +216,10 @@
             molestias laudantium eveniet quod ipsam maxime fugit magni
             recusandae consectetur aperiam quos porro.
           </p>
-          <img src="mikheil-janjgava.jfif" alt="" />
+          <img src="images/dr-janjgava.jpeg" alt="" />
         </li>
         <li class="doctor-item">
-          <img src="dr-daniel.jpg" alt="" />
+          <img src="images/dr-daniel.jpg" alt="" />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
             voluptate corporis, rerum dolorem exercitationem quos distinctio
@@ -157,11 +228,11 @@
           </p>
         </li>
       </ul>
-    </div>
+    </section>
 
-    <h2 class="container">Services</h2>
+    <section class="services container">
+      <h2>Services</h2>
 
-    <div class="services container">
       <ul class="services-list">
         <li class="service-item">
           <h4>Heel Pain</h4>
@@ -250,7 +321,7 @@
           </p>
         </li>
       </ul>
-    </div>
+    </section>
 
     <footer>&copy; Georgian Foot and Ankle Institute 2022</footer>
   </body>
