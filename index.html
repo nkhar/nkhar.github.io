@@ -34,11 +34,25 @@
       }
 
       nav {
+        width: 100%;
+
         font-size: 20px;
         font-weight: 700;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         padding: 30px;
+      }
+
+      .nav-sticky {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+        display: flex;
+
+        background-color: rgba(34, 34, 34, 0.9);
+
+        transition: 1s;
       }
 
       header {
@@ -46,7 +60,6 @@
 
         width: 100vw;
         height: 100vh;
-        margin: 0 auto;
         background-image: linear-gradient(
             to right,
             rgba(34, 34, 34, 0.6),
@@ -54,6 +67,7 @@
           ),
           url(images/road-1.jpeg);
         background-size: cover;
+        background-attachment: fixed;
         color: #fff;
       }
 
@@ -166,8 +180,8 @@
   </head>
   <body>
     <header>
-      <nav class="container">
-        <a href="#" class="link">Home</a>
+      <nav id="navbar">
+        <a href="#" class="link" id="nav-item-home">Home</a>
         <a href="#" class="link">Our story</a>
         <a href="#" class="link">Services</a>
         <a href="#" class="link">Testimonials</a>
@@ -344,5 +358,18 @@
     </section>
 
     <footer>&copy; Georgian Foot and Ankle Institute 2022</footer>
+
+    <script>
+      var navbar = document.getElementById("navbar");
+      var menuItemHome = document.getElementById("nav-item-home");
+
+      window.onscroll = function () {
+        if (window.pageYOffset >= menuItemHome.offsetTop) {
+          navbar.classList.add("nav-sticky");
+        } else {
+          navbar.classList.remove("nav-sticky");
+        }
+      };
+    </script>
   </body>
 </html>
