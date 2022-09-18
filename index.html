@@ -108,13 +108,13 @@
         display: inline-block;
       }
 
-      .link:link,
-      .link:visited {
+      .link {
         text-decoration: none;
         color: #fff;
         padding: 10px;
         display: inline-block;
         border-radius: 10%;
+        cursor: pointer;
       }
       .link:active,
       .link:hover {
@@ -195,11 +195,11 @@
   <body>
     <header>
       <nav>
-        <a href="#" class="link" local-link="main">Home</a>
-        <a href="#" class="link" local-link="about">Our story</a>
-        <a href="#" class="link" local-link="services">Services</a>
-        <a href="#" class="link" local-link="testimonials">Testimonials</a>
-        <a href="#" class="link" local-link="contact">Contact</a>
+        <a class="link" local-link="main">Home</a>
+        <a class="link" local-link="about">Our story</a>
+        <a class="link" local-link="services">Services</a>
+        <a class="link" local-link="testimonials">Testimonials</a>
+        <a class="link" local-link="contact">Contact</a>
 
         <div class="languages">
           <div class="georgian active">
