@@ -206,6 +206,55 @@
         transform: translate(0, -50%);
       }
 
+      .schedule {
+        margin-top: 60px;
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .location {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+      }
+
+      .location p {
+        font-size: 18px;
+        color: #656f72;
+        line-height: 2;
+      }
+
+      .office-hours {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+      }
+
+      .office-hours h3 {
+        text-align: center;
+      }
+
+      .office-hours p {
+        font-size: 18px;
+        color: #656f72;
+      }
+
+      .week-day {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .office-hours-title {
+        color: #4cacbc;
+      }
+
+      .location-title {
+        color: #4cacbc;
+      }
+
       .map {
         display: flex;
         flex-direction: column;
@@ -572,6 +621,54 @@
           </a>
         </li>
       </ul>
+    </section>
+
+    <section class="schedule container">
+      <div class="location">
+        <div class="location-title">
+          <h3>Location</h3>
+        </div>
+        <div class="location-details">
+          <p>Georgia Foot and Ankle Institute</p>
+          <p>Bezhan Kalandadze St. 26</p>
+          <p>Phone: 2752996</p>
+        </div>
+      </div>
+      <div class="office-hours">
+        <div class="office-hours-title">
+          <h3>office hours</h3>
+        </div>
+        <div class="week-days">
+          <div class="week-day">
+            <p>Monday</p>
+            <p>8:00 am - 5:00 pm</p>
+          </div>
+          <div class="week-day">
+            <p>Tuesday</p>
+            <p>8:00 am - 5:00 pm</p>
+          </div>
+          <div class="week-day">
+            <p>Wednesday</p>
+            <p>8:00 am - 5:00 pm</p>
+          </div>
+          <div class="week-day">
+            <p>Thursday</p>
+            <p>8:00 am - 5:00 pm</p>
+          </div>
+          <div class="week-day">
+            <p>Friday</p>
+            <p>8:00 am - 5:00 pm</p>
+          </div>
+          <div class="week-day">
+            <p>Saturday</p>
+            <p>8:00 am - 5:00 pm</p>
+          </div>
+          <div class="week-day">
+            <p>Sunday</p>
+            <p>Closed</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="map">
