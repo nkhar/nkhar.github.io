@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="slideshow.js" defer></script>
 
     <!-- Colors -->
     <!-- #2e3190 -->
@@ -204,6 +205,32 @@
         top: 50%;
         text-align: center;
         transform: translate(0, -50%);
+      }
+
+      .review-gallery {
+        margin-top: 100px;
+      }
+
+      .carousel > ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .slide {
+        display: none;
+        transition: 200ms display ease-in-out;
+      }
+
+      .slide > img {
+        width: 100vw;
+        height: 70vh;
+        object-fit: cover;
+      }
+
+      .slide[data-active] {
+        display: inline-block;
       }
 
       .schedule {
@@ -621,6 +648,58 @@
           </a>
         </li>
       </ul>
+    </section>
+
+    <section class="review-gallery">
+      <div class="carousel" data-carousel>
+        <ul data-slides>
+          <li class="slide" data-active>
+            <img
+              src="images/review-covers/vadym-lebedych-AXz9vzvKCzc-unsplash.jpg"
+              alt=""
+            />
+          </li>
+          <li class="slide">
+            <img
+              src="images/review-covers/vadym-lebedych-fISNTHvcjcc-unsplash.jpg"
+              alt=""
+            />
+          </li>
+          <li class="slide">
+            <img src="images/georgia-monument-of-giants.jpg" alt="" />
+          </li>
+          <li class="slide">
+            <img
+              src="images/review-covers/denis-arslanbekov-b-eGDk5_gPo-unsplash.jpg"
+              alt=""
+            />
+          </li>
+          <li class="slide">
+            <img
+              src="images/review-covers/eugene-chystiakov-mZ3SxehMCcg-unsplash.jpg"
+              alt=""
+            />
+          </li>
+          <li class="slide">
+            <img
+              src="images/review-covers/mostafa-meraji-cYhGxgo8wCc-unsplash.jpg"
+              alt=""
+            />
+          </li>
+          <li class="slide">
+            <img
+              src="images/review-covers/mostafa-meraji-Yqz7kfZGxp4-unsplash.jpg"
+              alt=""
+            />
+          </li>
+          <li class="slide">
+            <img
+              src="images/review-covers/nino-gakhokia-WChdTePaIqo-unsplash.jpg"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
     </section>
 
     <section class="schedule container">
