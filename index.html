@@ -14,6 +14,7 @@
     <!-- Colors -->
     <!-- #2e3190 -->
     <!-- rgb(46,49,144) -->
+    <!-- #2F303A -->
 
     <title>Georgian Foot and Ankle Institute</title>
 
@@ -127,19 +128,23 @@
 
       .doctors {
       }
+
+      .doctor-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 20px;
+        column-gap: 20px;
+      }
+
       .doctor-item {
         display: flex;
         gap: 20px;
+        flex-direction: column;
         align-items: center;
-        /* background-color: #2e3190; */
-        /* background-color: #87a2fb; */
-        /* background-color: #eef1ff; */
-        background-color: #4cacbc;
-
-        border-radius: 10px;
-
-        padding: 0 0 0 0;
-        margin-top: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+        padding: 20px 20px;
       }
 
       .doctor-item:first-child {
@@ -147,12 +152,14 @@
       }
 
       .doctor-item img {
-        width: 300px;
-        border-radius: 10px;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
       }
 
       .doctor-item p {
-        color: #fff;
+        color: #2f303a;
         font-size: 20px;
       }
 
@@ -292,7 +299,7 @@
       footer {
         margin-top: 60px;
         padding: 50px;
-        background-color: blueviolet;
+        background-color: #2f303a;
         color: #fff;
       }
     </style>
@@ -333,22 +340,41 @@
     <section class="container about-us">
       <h2>About Us</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
-        molestiae accusamus nesciunt voluptates similique, rerum id quasi. Dolor
-        maiores vel earum a, aspernatur, id excepturi illum ipsa corrupti qui
-        quas? Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        საქართველოს „ტერფის და კოჭ-წვივის სახსრის ინსტიტუტი“ (ტერფის ინსტიტუტი)
+        დაარსდა 2018 წელს ამერიკული ორგანიზაციის GraMedica – ს მხარდაჭერით და
+        ამერიკელი ტერფის სპეციალისტების პატრონაჟით.
       </p>
       <div>&nbsp;</div>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur,
-        veritatis ullam. Minus saepe dolores omnis adipisci optio incidunt nam
-        suscipit corrupti numquam magnam? Ipsum iusto quia, vitae maiores
-        perferendis ullam! Odio voluptates non odit voluptatum quis beatae
-        delectus repellat eaque labore nobis! Alias distinctio optio ab, et est
-        vitae doloremque ipsam quos? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Non molestias placeat perferendis quis hic libero
-        eligendi officia, veniam obcaecati exercitationem. Reprehenderit modi
-        earum, nulla quidem alias iure enim quae a!
+        ტერფის ინსტიტუტი ქ. თბილისში ჩამოყალიბდა რეგიონალურ ცენტრად, სადაც თავს
+        იყრის ჩვენს რეგიონში არსებული ტერფის თანდაყოლილი და შეძენილი დეფორმაციის
+        მქონე პაციენტები.
+      </p>
+      <div>&nbsp;</div>
+      <p>
+        ჩვენი კლინიკა პაციენტებს სთავაზობს ტერფის დიაგნოსტირების, მკურნალობის და
+        რეაბილიტაციის სრულ სპექტრს.
+      </p>
+      <div>&nbsp;</div>
+      <p>
+        მკურნალობის მეთოდოლოგია სრულად შეესაბამება ევროპის და ა.შ.შ -ში
+        აპრობირებულ სამედიცინო გაიდლაინებს.
+      </p>
+      <div>&nbsp;</div>
+      <p>
+        ჩვენი კლინიკის წამყვანი სპეციალისტი ელი დანიელი (Elie C.Daniel) რომელიც
+        გახლავთ ამერიკელი ექიმი პოდიატრი, მედიცინის დოქტორი, გრამედიკა-ს
+        ინსტიტუტის წევრი. ტერფის მასტერი. ბრტყელი ტერფის ქირურგიაში
+        სპეციალიზირებული ქირურგი ილინოისის შტატის პირველ დახელოვნების ცენტრში.
+        ჩიკაგოს უნივერსიტეტის პროფესორი, პირადად არის ჩართული ყველა რთული
+        კლინიკური შემთხვევის დიაგნოსტირების, მკურნალობის ეტაპებში და მონიტორინგს
+        უწევს რეაბილიტაციურ მკურნალობას.
+      </p>
+      <div>&nbsp;</div>
+      <p>
+        ტერფის ინსტიტუტის მუშაობის პრინციპი დაფუძნებულია გუნდური მუშაობის
+        პრინციპებზე, რომელიც მოიაზრებს როგორც ადგილობრივი ისე სხვა ქვეყნების
+        სპეციალისტების აქტიურ ჩართულობას.
       </p>
     </section>
 
@@ -357,30 +383,23 @@
       <ul class="doctor-list">
         <li class="doctor-item">
           <img src="images/dr-chumburidze.jpeg" alt="" />
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet,
-            id vero earum voluptate iste nemo! Nesciunt reprehenderit deserunt,
-            minus mollitia eum illum veritatis harum, magni tenetur aspernatur
-            itaque, labore animi?
-          </p>
+          <p>Jemal Chumburidze, MD</p>
+          <p>Children Orthoped-Traumatologist, Surgeon</p>
         </li>
         <li class="doctor-item">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-            illo magnam, vero incidunt accusantium, veritatis facilis at
-            molestias laudantium eveniet quod ipsam maxime fugit magni
-            recusandae consectetur aperiam quos porro.
-          </p>
           <img src="images/dr-janjgava.jpeg" alt="" />
+          <p>Mikheil Janjgava, MD, MPH</p>
+          <p>Orthoped-Traumatologist, Surgeon</p>
         </li>
         <li class="doctor-item">
           <img src="images/dr-daniel.jpg" alt="" />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-            voluptate corporis, rerum dolorem exercitationem quos distinctio
-            quam laudantium dolor et? Eum nihil necessitatibus eius iusto libero
-            consectetur ipsa quidem a.
-          </p>
+          <p>Elie C. Daniel, MD</p>
+          <p>Orthoped-Traumatologist, Surgeon</p>
+        </li>
+        <li class="doctor-item">
+          <img src="images/dr-chumburidze-jr.jpeg" alt="" />
+          <p>Giorgi Chumburidze, MD</p>
+          <p>Orthoped-Traumatologist, Surgeon</p>
         </li>
       </ul>
     </section>
