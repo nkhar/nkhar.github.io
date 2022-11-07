@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Rubik", sans-serif;
+  color: #444;
+}
+
+.blue-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(46, 173, 222, 0.8);
+  width: 100%;
+  height: 200px;
+}
+
+.blue-cover h1 {
+  font-size: 37px;
+  color: #fff;
+}
+
+.main-container {
+  margin: 0 auto;
+  padding: 10px 120px 0 120px;
+  max-width: 1200px;
+}
+
+/* Social Media */
+
+.social-media-share {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+
+.social-media-share a i {
+  font-size: 32px;
+}
+
+.social-media-share a {
+  text-decoration: none;
+
+  transition: 500ms;
+}
+
+.social-media-share a:hover {
+  transform: scale(1.2);
+}
+
+.social-media-share .fa-facebook {
+  color: #1877f2;
+}
+
+.social-media-share .fa-twitter {
+  color: #1da1f2;
+}
+
+.social-media-share .fa-pinterest {
+  color: #e60023;
+}
+
+.social-media-share .fa-linkedin {
+  color: #0077b5;
+}
+
+.social-media-share .fa-reddit {
+  color: #ff4500;
+}
+
+/* Service Header */
+
+.service-header {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 20px;
+  margin-bottom: 60px;
+}
+
+.identity-summary-wrapper {
+  display: flex;
+  gap: 50px;
+}
+
+.identity {
+  flex: 1;
+}
+
+.identity h2 {
+  font-family: "Open Sans", arial, sans-serif;
+  font-size: 22px;
+  text-align: center;
+  line-height: 120%;
+  color: #333;
+  margin: 0 0 10px;
+}
+
+.identity h3 {
+  font-family: "Open Sans", arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  line-height: 120%;
+  color: #333;
+  font-weight: normal;
+}
+
+.summary {
+  flex: 2;
+}
+
+.summary p {
+  font-size: 15px;
+  line-height: 180%;
+  color: #656f72;
+}
+
+section.service h2 {
+  font-family: "Open Sans", arial, sans-serif;
+  font-weight: 300;
+  font-size: 31px;
+  line-height: 35px;
+  color: #191b1f;
+}
+
+section.service .details h2 {
+  margin: 20px 0 20px;
+  color: #000;
+}
+
+section.service .details {
+  font-size: 15px;
+  line-height: 180%;
+  color: #656f72;
+  margin: 0 0 12px;
+}
+section.service .details ul {
+  margin: 0;
+  padding: 0;
+  list-style: disc;
+}
+
+section.service .details ul li {
+  margin-left: 30px;
+}
