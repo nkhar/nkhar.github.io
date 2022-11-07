@@ -1,0 +1,66 @@
+.services {
+  margin-top: 80px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-image: linear-gradient(
+      to right,
+      rgba(34, 34, 34, 0.6),
+      rgba(34, 34, 34, 0.6)
+    ),
+    url(/images/review-covers/eugene-chystiakov-mZ3SxehMCcg-unsplash.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.services h2 {
+  font-size: 40px;
+  color: #fff;
+
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.services-list {
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.service-item {
+  height: 202px;
+  width: 234px;
+  background-color: aliceblue;
+  position: relative;
+
+  border: 1px solid #d7dfe2;
+}
+
+.service-item a {
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: block;
+  background: rgba(32, 26, 22, 0.5);
+}
+
+.service-item-bg {
+  width: 232px;
+  height: 200px;
+  position: absolute;
+}
+
+.service-item-info {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  transform: translate(0, -50%);
+}

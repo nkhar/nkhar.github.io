@@ -9,9 +9,9 @@ html {
   color: #444;
 }
 
-body {
+.main-container {
   margin: 0 auto;
-  padding: 40px 120px;
+  padding: 40px 120px 0 120px;
   max-width: 1200px;
 }
 
