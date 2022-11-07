@@ -1,5 +1,19 @@
 footer {
-  padding: 150px;
+  padding: 50px 100px;
   background-color: #2f303a;
   color: #fff;
+}
+
+.footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-wrapper p {
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 30px;
 }
