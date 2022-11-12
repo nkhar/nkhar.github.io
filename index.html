@@ -853,12 +853,14 @@
 
       const aboutUsSection = document.querySelector("section.about-us");
       const servicesSection = document.querySelector("section.services");
-      const mapSection = document.querySelector("section.map");
+      const reviewsSection = document.querySelector("section.review-gallery");
+      const scheduleSection = document.querySelector("section.schedule");
 
       menuLinks.forEach((el) => {
         el.addEventListener("click", () => {
           const menuItemCLicked = el.getAttribute("local-link");
 
+          var additionalOffset = 0;
           var sectionToScroll = aboutUsSection;
           if (menuItemCLicked === "main") {
             sectionToScroll = aboutUsSection;
@@ -870,13 +872,15 @@
             sectionToScroll = servicesSection;
           }
           if (menuItemCLicked === "testimonials") {
-            sectionToScroll = servicesSection;
+            sectionToScroll = reviewsSection;
+            additionalOffset = 70;
           }
           if (menuItemCLicked === "contact") {
-            sectionToScroll = mapSection;
+            sectionToScroll = scheduleSection;
+            additionalOffset = 70;
           }
 
-          var topPos = sectionToScroll.offsetTop - 50;
+          var topPos = sectionToScroll.offsetTop - 50 - additionalOffset;
 
           setTimeout(function () {
             // sectionToScroll.scrollIntoView(true, {
