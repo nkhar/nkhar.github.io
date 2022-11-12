@@ -276,9 +276,11 @@
 
       .schedule {
         margin-top: 60px;
-        margin-bottom: 20px;
+        margin-bottom: 60px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        column-gap: 160px;
+        row-gap: 40px;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       }
 
       .location {
@@ -810,8 +812,6 @@
     </section>
 
     <section class="map">
-      <h2>Address</h2>
-      <h3>Bezhan Kalandadze St. 26, tel: 2752996 or 2752908</h3>
       <div class="actual-map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2858.4168904043204!2d44.81897846422817!3d41.6816249651505!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x283715d38dd5938c!2z4YOi4YOU4YOg4YOk4YOY4YOhIOGDk-GDkCDhg5nhg53hg63hg6zhg5Xhg5jhg5Xhg5jhg6Eg4YOh4YOQ4YOu4YOh4YOg4YOY4YOhIOGDmOGDnOGDoeGDouGDmOGDouGDo-GDouGDmA!5e0!3m2!1sen!2sge!4v1663442844114!5m2!1sen!2sge"
