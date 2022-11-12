@@ -346,9 +346,24 @@
 
       footer {
         margin-top: 60px;
-        padding: 50px;
+        padding: 50px 100px;
         background-color: #2f303a;
         color: #fff;
+      }
+
+      .footer-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .footer-wrapper p {
+        font-family: "Open Sans";
+        font-size: 14px;
+        line-height: 30px;
+        margin-top: 10px;
       }
     </style>
   </head>
@@ -835,7 +850,16 @@
       </div>
     </section>
 
-    <footer>&copy; Georgian Foot and Ankle Institute 2022</footer>
+    <footer>
+      <div class="footer-wrapper">
+        <p>Georgia Foot and Ankle Institute</p>
+        <p>
+          Phone (appointments): 2-752-996 | Phone (general inquiries): 2-752-996
+        </p>
+        <p>Adress: 26 Bezhan Kalandadze St, Tbilisi, Georgia</p>
+        <p>&copy; Georgian Foot and Ankle Institute 2022</p>
+      </div>
+    </footer>
 
     <script>
       var navbar = document.querySelector("nav");
