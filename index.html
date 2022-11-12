@@ -134,7 +134,7 @@
         margin: 0;
         list-style: none;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         row-gap: 20px;
         column-gap: 20px;
       }
@@ -178,7 +178,7 @@
           flex-direction: column;
           align-items: center;
 
-          font-size: 16px;
+          font-size: 1rem;
           font-weight: 700;
           gap: 5px;
           padding: 10px;
@@ -197,10 +197,6 @@
           font-size: 1rem;
         }
 
-        .doctor-list {
-          grid-template-columns: 1fr 1fr;
-        }
-
         .doctor-item p {
           font-size: 1rem;
         }
@@ -213,9 +209,9 @@
         list-style: none;
 
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        row-gap: 20px;
-        column-gap: 20px;
+        /* grid-template-columns: repeat(auto-fit, minmax(234px, 1fr)); */
+        grid-template-columns: repeat(auto-fit, 234px);
+        justify-content: center;
       }
 
       .service-item {
