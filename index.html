@@ -219,8 +219,13 @@
         width: 234px;
         background-color: aliceblue;
         position: relative;
-
         border: 1px solid #d7dfe2;
+      }
+
+      .service-item-bg {
+        width: 232px;
+        height: 200px;
+        position: absolute;
       }
 
       .service-item a {
@@ -234,10 +239,52 @@
         background: rgba(32, 26, 22, 0.5);
       }
 
-      .service-item-bg {
-        width: 232px;
-        height: 200px;
+      .service-item a h4 {
+        opacity: 1;
+      }
+
+      .service-item a p {
+        opacity: 0;
+      }
+
+      .service-item a:hover h4 {
+        opacity: 0;
+      }
+
+      .service-item a:hover p {
+        opacity: 1;
+      }
+
+      .service-item a::before,
+      .service-item a::after {
+        content: "";
+        top: 0.75em;
+        left: 0.75em;
+        right: 0.75em;
+        bottom: 0.75em;
         position: absolute;
+      }
+
+      .service-item a::before {
+        border-top: 1px solid #ffffff;
+        border-bottom: 1px solid #ffffff;
+        transform: scale(0, 1);
+        transition: transform ease-out 250ms;
+      }
+
+      .service-item a:hover::before {
+        transform: scale(1.05, 1);
+      }
+
+      .service-item a::after {
+        border-left: 1px solid #ffffff;
+        border-right: 1px solid #ffffff;
+        transform: scale(1, 0);
+        transition: transform ease-out 250ms;
+      }
+
+      .service-item a:hover::after {
+        transform: scale(1, 1.05);
       }
 
       .service-item-info {
@@ -478,6 +525,7 @@
           <a href="/services/lapiplasty.html">
             <div class="service-item-info">
               <h4 class="service-name">Bunion</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -491,6 +539,7 @@
           <a href="/services/plantar-warts.html">
             <div class="service-item-info">
               <h4 class="service-name">Plantar Warts</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -504,6 +553,7 @@
           <a href="/services/total-ankle-replacement.html">
             <div class="service-item-info">
               <h4 class="service-name">Total Ankle Replacement</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -517,6 +567,7 @@
           <a href="/services/ingrown-toenails.html">
             <div class="service-item-info">
               <h4 class="service-name">Ingrown Toenails</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -528,6 +579,7 @@
           <a href="/services/ankle-sprain.html">
             <div class="service-item-info">
               <h4 class="service-name">Ankle Sprain</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -541,6 +593,7 @@
           <a href="/services/foot-and-ankle-trauma.html">
             <div class="service-item-info">
               <h4 class="service-name">Foot and Ankle Trauma</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -554,6 +607,7 @@
           <a href="/services/arthritic-footcare.html">
             <div class="service-item-info">
               <h4 class="service-name">Arthritic Footcare</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -567,6 +621,7 @@
           <a href="/services/ankle-surgery.html">
             <div class="service-item-info">
               <h4 class="service-name">Ankle Surgery</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -578,6 +633,7 @@
           <a href="/services/hammer-toe.html">
             <div class="service-item-info">
               <h4 class="service-name">Hammer Toe</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -591,6 +647,7 @@
           <a href="/services/sports-medicine.html">
             <div class="service-item-info">
               <h4 class="service-name">Sports Medicine</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -601,6 +658,7 @@
           <a href="/services/foot-pain.html">
             <div class="service-item-info">
               <h4 class="service-name">Foot Pain</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -611,6 +669,7 @@
           <a href="/services/fractures.html">
             <div class="service-item-info">
               <h4 class="service-name">Fractures</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -625,6 +684,7 @@
           <a href="/services/regenerative-medicine.html">
             <div class="service-item-info">
               <h4 class="service-name">Regenerative Medicine</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -635,6 +695,7 @@
           <a href="/services/flat-feet.html">
             <div class="service-item-info">
               <h4 class="service-name">Flat Feet</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -645,6 +706,7 @@
           <a href="/services/tendonitis.html">
             <div class="service-item-info">
               <h4 class="service-name">Tendonitis</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -655,6 +717,7 @@
           <a href="/services/foot-surgery.html">
             <div class="service-item-info">
               <h4 class="service-name">Foot Surgery</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -669,6 +732,7 @@
           <a href="/services/custom-made-orthotics.html">
             <div class="service-item-info">
               <h4 class="service-name">Custom Made Orthotics</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -682,6 +746,7 @@
           <a href="/services/minimally-invasive-foot-surgery.html">
             <div class="service-item-info">
               <h4 class="service-name">Minimally Invasive Foot Surgery</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -695,6 +760,7 @@
           <a href="/services/achilles-tendon.html">
             <div class="service-item-info">
               <h4 class="service-name">Achilles Tendon</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -708,6 +774,7 @@
           <a href="/services/plantar-fasciitis-and-heel-spurs.html">
             <div class="service-item-info">
               <h4 class="service-name">Plantar Fasciitis and Heel Spurs</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -722,6 +789,7 @@
           <a href="/services/ankle-arthroscopy.html">
             <div class="service-item-info">
               <h4 class="service-name">Ankle Arthroscopy</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
@@ -732,6 +800,7 @@
           <a href="/services/neuroma.html">
             <div class="service-item-info">
               <h4 class="service-name">Neuroma</h4>
+              <p>Read More</p>
             </div>
           </a>
         </li>
