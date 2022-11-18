@@ -1,19 +1,3 @@
-var requestOptions = {
-  method: "GET",
-  redirect: "follow",
-};
-
-function getServices() {
-  const titleH1 = document.querySelector(".header-container>h1");
-
-  fetch("https://gfai-cms.up.railway.app/api/services", requestOptions)
-    .then((response) => response.json())
-    .then((result) => (titleH1.textContent = result.data[0].attributes.name))
-    .catch((error) => console.log("error", error));
-}
-
-window.onload = getServices;
-
 var navbar = document.querySelector("nav");
 var menuItemHome = document.querySelector("nav>a:first-child");
 

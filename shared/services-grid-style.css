@@ -40,6 +40,12 @@
   border: 1px solid #d7dfe2;
 }
 
+.service-item-bg {
+  width: 232px;
+  height: 200px;
+  position: absolute;
+}
+
 .service-item a {
   text-decoration: none;
   color: #fff;
@@ -51,10 +57,60 @@
   background: rgba(32, 26, 22, 0.5);
 }
 
-.service-item-bg {
-  width: 232px;
-  height: 200px;
+.service-item a:hover {
+  background: rgba(32, 26, 22, 0.8);
+}
+
+.service-item a h4 {
+  opacity: 1;
+}
+
+.service-item a p {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.service-item a:hover h4 {
+  opacity: 0;
+}
+
+.service-item a:hover p {
+  opacity: 1;
+}
+
+.service-item a::before,
+.service-item a::after {
+  content: "";
+  top: 0.75em;
+  left: 0.75em;
+  right: 0.75em;
+  bottom: 0.75em;
+  position: absolute;
+}
+
+.service-item a::before {
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  transform: scale(0, 1);
+  transition: transform ease-out 250ms;
+}
+
+.service-item a:hover::before {
+  transform: scale(1.05, 1);
+}
+
+.service-item a::after {
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  transform: scale(1, 0);
+  transition: transform ease-out 250ms;
+}
+
+.service-item a:hover::after {
+  transform: scale(1, 1.05);
 }
 
 .service-item-info {
