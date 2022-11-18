@@ -24,11 +24,9 @@
 
 .services-list {
   list-style: none;
-
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 20px;
-  column-gap: 20px;
+  grid-template-columns: repeat(auto-fit, 234px);
+  justify-content: center;
 }
 
 .service-item {
