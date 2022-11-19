@@ -14,7 +14,6 @@ function getDoctors() {
   }
 
   tempBaseUrl += doctorsPath;
-  console.log(tempBaseUrl);
 
   fetch(tempBaseUrl, requestOptions)
     .then((response) => response.json())
@@ -29,7 +28,6 @@ function getDoctors() {
 
 function createDoctorCard(doctorItem) {
   let card = document.createElement("li");
-  console.log(card);
   card.classList.add("doctor-item");
   card.onclick = () => {
     window.location.assign(
@@ -58,7 +56,6 @@ function createDoctorCard(doctorItem) {
 
   card.append(doctorName);
   card.append(doctorPosition);
-  console.log(card);
 
   return card;
 }

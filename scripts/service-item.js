@@ -25,7 +25,6 @@ function getService() {
   fetch(tempBaseUrl, requestOptions)
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
       attributes = result.data.attributes;
 
       pageTitle.textContent = attributes.postTitle;
