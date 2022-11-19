@@ -1,4 +1,4 @@
-const isProd = true;
+const isProd = false;
 
 const apiUrlProd = "https://gfai-cms.up.railway.app/api";
 const apiUrlLocal = "http://localhost:1337/api";

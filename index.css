@@ -180,6 +180,10 @@ header {
     font-size: 1rem;
   }
 
+  .doctor-item:hover {
+    cursor: pointer;
+  }
+
   .doctor-item p {
     font-size: 1rem;
   }
