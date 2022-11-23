@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  basePath: "/nkhar.github.io",
+  images: {
+    loader: "akamai",
+    path: "",
+  },
 };
 
 module.exports = nextConfig;
