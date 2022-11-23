@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  basePath: "/nkhar.github.io",
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

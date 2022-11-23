@@ -10,7 +10,7 @@
 
 # next.js
 /.next/
-/out/
+# /out/ needed for Github Pages
 
 # production
 /build
@@ -34,3 +34,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# // "deploy": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy\" && git subtree push --prefix out origin nextjs"
