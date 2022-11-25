@@ -1,0 +1,17 @@
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.doctors {
+}
+
+.doctor_list {
+  margin: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  row-gap: 20px;
+  column-gap: 20px;
+}

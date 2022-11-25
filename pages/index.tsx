@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import DashboardHeader from "../components/DashboardHeader";
 import AboutUs from "../components/AboutUs";
 import styles from "../styles/Home.module.css";
+import DoctorList from "../components/DoctorList";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
 
       <DashboardHeader />
       <AboutUs />
+      <DoctorList />
 
       <main className={styles.main}>
         <h1 className={styles.title}>
