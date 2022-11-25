@@ -1,0 +1,15 @@
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.about_us p {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 680px) {
+  .about_us p {
+    font-size: 1rem;
+  }
+}

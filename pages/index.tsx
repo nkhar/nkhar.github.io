@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Footer from "../components/Footer";
 import DashboardHeader from "../components/DashboardHeader";
+import AboutUs from "../components/AboutUs";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -14,6 +15,8 @@ export default function Home() {
       </Head>
 
       <DashboardHeader />
+      <AboutUs />
+
       <main className={styles.main}>
         <h1 className={styles.title}>
           Learn <a href="https://nextjs.org">Next.js!</a>
