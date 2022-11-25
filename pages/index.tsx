@@ -5,6 +5,7 @@ import DashboardHeader from "../components/DashboardHeader";
 import AboutUs from "../components/AboutUs";
 import styles from "../styles/Home.module.css";
 import DoctorList from "../components/DoctorList";
+import ServiceList from "../components/ServiceList";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <DashboardHeader />
       <AboutUs />
       <DoctorList />
+      <ServiceList />
 
       <main className={styles.main}>
         <h1 className={styles.title}>
