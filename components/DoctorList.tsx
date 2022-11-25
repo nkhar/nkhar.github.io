@@ -26,6 +26,10 @@ const fetchDoctors = async () => {
   return data.data;
 };
 
+function doctorClicked(id: Number) {
+  window.location.assign(`${window.origin}/doctors/doctor.html?id=${id}`);
+}
+
 const DoctorList = () => {
   const [doctors, setDoctors] = useState<[Doctor]>();
 
@@ -39,7 +43,13 @@ const DoctorList = () => {
   }, []);
 
   const doctorItems = doctors?.map((doctorItem: Doctor) => (
-    <DoctorItem doctor={doctorItem} />
+    <li
+      className={styles.doctor_item}
+      onClick={() => doctorClicked(Number(doctorItem.id))}
+      key={doctorItem.id}
+    >
+      <DoctorItem doctor={doctorItem} />
+    </li>
   ));
 
   return (
