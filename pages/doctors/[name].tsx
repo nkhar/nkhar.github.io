@@ -36,7 +36,6 @@ export default function DoctorPage() {
 
   const router = useRouter();
   const { name, doctorId } = router.query;
-  console.log(router);
 
   useEffect(() => {
     const getDoctor = async () => {
