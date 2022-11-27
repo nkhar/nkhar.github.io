@@ -1,4 +1,7 @@
 import { isProd, photoUrlProd, photoUrlLocal } from "../env";
+
+import Link from "next/link";
+
 import { Service } from "./models/Service";
 import styles from "../styles/ServiceItem.module.css";
 
@@ -22,18 +25,19 @@ const ServiceItem = (props: any) => {
         />
       </div>
 
-      <a
-        href={
-          window.location.origin + `/services/service.html?id=${service.id}`
-        }
+      <Link
+        legacyBehavior
+        href={`/services/${service?.attributes.postTitle}?articleId=${service.id}`}
       >
-        <div className={styles.service_item_info}>
-          <h4 className={styles.service_name}>
-            {service.attributes.postTitle}
-          </h4>
-          <p>Read More</p>
-        </div>
-      </a>
+        <a>
+          <div className={styles.service_item_info}>
+            <h4 className={styles.service_name}>
+              {service.attributes.postTitle}
+            </h4>
+            <p>Read More</p>
+          </div>
+        </a>
+      </Link>
     </>
   );
 };
