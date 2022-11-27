@@ -78,7 +78,11 @@ export default function DoctorPage() {
             </div>
 
             <div className={styles.doctor_biography}>
-              <p>{doctor?.attributes.doctorBiography}</p>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: doctor?.attributes.doctorBiography,
+                }}
+              ></p>
             </div>
           </div>
         </div>
