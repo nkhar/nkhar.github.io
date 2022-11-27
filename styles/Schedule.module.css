@@ -1,0 +1,56 @@
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.schedule {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  display: grid;
+  column-gap: 160px;
+  row-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.location p {
+  font-size: 18px;
+  color: #656f72;
+  line-height: 2;
+}
+
+.office_hours {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.office_hours h3 {
+  text-align: center;
+}
+
+.office_hours p {
+  font-size: 18px;
+  color: #656f72;
+}
+
+.week_day {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.office_hours_title {
+  color: #4cacbc;
+}
+
+.location_title {
+  color: #4cacbc;
+}

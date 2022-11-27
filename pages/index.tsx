@@ -6,6 +6,8 @@ import AboutUs from "../components/AboutUs";
 import styles from "../styles/Home.module.css";
 import DoctorList from "../components/DoctorList";
 import ServiceList from "../components/ServiceList";
+import Schedule from "../components/Schedule";
+import MapFrame from "../components/MapFrame";
 
 export default function Home() {
   return (
@@ -20,6 +22,8 @@ export default function Home() {
       <AboutUs />
       <DoctorList />
       <ServiceList />
+      <Schedule />
+      <MapFrame />
 
       <main className={styles.main}>
         <h1 className={styles.title}>
