@@ -5,35 +5,38 @@
   justify-content: end;
 }
 
-.social_media_share a i {
-  font-size: 32px;
-}
-
 .social_media_share a {
   text-decoration: none;
   transition: 500ms;
+}
+
+.social_media_share a svg {
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
 }
 
 .social_media_share a:hover {
   transform: scale(1.2);
 }
 
-.social_media_share .fa_facebook {
+.social_media_share svg.fa-facebook path {
   color: #1877f2;
+  fill: #1877f2;
 }
 
-.social_media_share .fa_twitter {
+.social_media_share .fa-twitter {
   color: #1da1f2;
 }
 
-.social_media_share .fa_pinterest {
+.social_media_share .fa-pinterest {
   color: #e60023;
 }
 
-.social_media_share .fa_linkedin {
+.social_media_share .fa-linkedin {
   color: #0077b5;
 }
 
-.social_media_share .fa_reddit {
+.social_media_share .fa-reddit {
   color: #ff4500;
 }

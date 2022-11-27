@@ -44,27 +44,27 @@ const SocialMediaShare = () => {
       <a className={styles.facebook} href={state.fbHref} target="blank">
         {/* <i className={styles.fab.concat(" ").concat(styles.fa_facebook)}></i> */}
         {/* <FontAwesomeIcon icon={["fab", "facebook"]} /> */}
-        <FontAwesomeIcon icon={faFacebook} />
+        <FontAwesomeIcon icon={faFacebook} color="#1877f2" />
       </a>
 
       <a className={styles.twitter} href={state.twitterHref} target="blank">
         {/* <i className={styles.fab.concat(" ").concat(styles.fa_twitter)}></i> */}
-        <FontAwesomeIcon icon={faTwitter} />
+        <FontAwesomeIcon icon={faTwitter} color="#1da1f2" />
       </a>
 
       <a className={styles.linkedin} href={state.linkedinHref} target="blank">
         {/* <i className={styles.fab.concat(" ").concat(styles.fa_linkedin)}></i> */}
-        <FontAwesomeIcon icon={faLinkedin} />
+        <FontAwesomeIcon icon={faLinkedin} color="#0077b5" />
       </a>
 
       <a className={styles.pinterest} href={state.pinterestHref} target="blank">
         {/* <i className={styles.fab.concat(" ").concat(styles.fa_pinterest)}></i> */}
-        <FontAwesomeIcon icon={faPinterest} />
+        <FontAwesomeIcon icon={faPinterest} color="#e60023" />
       </a>
 
       <a className={styles.reddit} href={state.redditHref} target="blank">
         {/* <i className={styles.fab.concat(" ").concat(styles.fa_reddit)}></i> */}
-        <FontAwesomeIcon icon={faReddit} />
+        <FontAwesomeIcon icon={faReddit} color="#ff4500" />
       </a>
     </div>
   );
