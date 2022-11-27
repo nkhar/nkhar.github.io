@@ -1,0 +1,19 @@
+.actual_footer {
+  padding: 50px 100px;
+  background-color: #2f303a;
+  color: #fff;
+}
+
+.footer_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer_wrapper p {
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 30px;
+}

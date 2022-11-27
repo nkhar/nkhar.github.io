@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 import { isProd, apiUrlProd, apiUrlLocal } from "../env";
 import { useState, useEffect } from "react";
 import { Doctor } from "./models/Doctor";
@@ -26,8 +28,8 @@ const fetchDoctors = async () => {
   return data.data;
 };
 
-function doctorClicked(id: Number) {
-  window.location.assign(`${window.origin}/doctors/doctor.html?id=${id}`);
+function doctorClicked(name: string) {
+  window.location.assign(`${window.origin}/doctors/${name}`);
 }
 
 const DoctorList = () => {
@@ -42,10 +44,19 @@ const DoctorList = () => {
     getDoctors();
   }, []);
 
+  const router = useRouter();
+
+  const handleClick = (name: string, id: number) => {
+    const href = `/doctors/${name}?doctorId=${id}`;
+    router.push(href);
+  };
+
   const doctorItems = doctors?.map((doctorItem: Doctor) => (
     <li
       className={styles.doctor_item}
-      onClick={() => doctorClicked(Number(doctorItem.id))}
+      onClick={() =>
+        handleClick(doctorItem.attributes.doctorName, Number(doctorItem.id))
+      }
       key={doctorItem.id}
     >
       <DoctorItem doctor={doctorItem} />

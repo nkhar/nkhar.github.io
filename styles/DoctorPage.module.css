@@ -1,0 +1,23 @@
+.main-container {
+  margin: 0 auto;
+  padding: 10px 120px 0 120px;
+  max-width: 1200px;
+}
+
+.doctor_info {
+  display: flex;
+}
+
+.doctor_image {
+  flex: 1;
+  margin: 50px;
+}
+
+.doctor_image img {
+  width: 100%;
+}
+
+.doctor_biography {
+  flex: 1;
+  margin: 50px;
+}
