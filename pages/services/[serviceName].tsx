@@ -35,16 +35,19 @@ export default function DoctorPage() {
   const [service, setService] = useState<Service>();
 
   const router = useRouter();
-  const { name, articleId } = router.query;
 
   useEffect(() => {
-    const getService = async () => {
-      const doctor = await fetchService(articleId as string);
-      setService(doctor);
-    };
+    if (router.isReady) {
+      const getService = async () => {
+        const { name, articleId } = router.query;
+        if (!articleId) return null;
+        const doctor = await fetchService(articleId as string);
+        setService(doctor);
+      };
 
-    getService();
-  }, []);
+      getService();
+    }
+  }, [router.isReady]);
 
   var tempPhotoUrl = "";
   if (isProd) {

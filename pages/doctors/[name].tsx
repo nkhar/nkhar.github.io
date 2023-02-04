@@ -41,6 +41,7 @@ export default function DoctorPage() {
     if (router.isReady) {
       const getDoctor = async () => {
         const { name, doctorId } = router.query;
+        if (!doctorId) return null;
         const doctor = await fetchDoctor(doctorId as string);
         setDoctor(doctor);
       };
