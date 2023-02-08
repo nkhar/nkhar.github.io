@@ -5,7 +5,9 @@ const Nav = () => {
   return (
     <nav className={navStyles.actual_nav}>
       <Link href="#" className={navStyles.link} local-link="main">
-        Home
+        <div className={navStyles.main_logo_link}>
+          <img src="/gfai_logo.ico" />
+        </div>
       </Link>
       <a className={navStyles.link} local-link="about">
         Our story

@@ -8,6 +8,13 @@
   padding: 30px;
 }
 
+.main_logo_link img {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  /* transform: translate(0, -110%); */
+}
+
 .languages {
   display: flex;
   gap: 10px;
