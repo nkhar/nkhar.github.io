@@ -10,7 +10,8 @@ const Schedule = () => {
         <div className={styles.location_details}>
           <p>Georgia Foot and Ankle Institute</p>
           <p>Bezhan Kalandadze St. 26</p>
-          <p>Phone: 2752996</p>
+          <p>Tbilisi, Georgia 0186</p>
+          <p>Phone: 032 2 309 909</p>
         </div>
       </div>
       <div className={styles.office_hours}>
