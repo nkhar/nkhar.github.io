@@ -38,6 +38,12 @@ export default function DoctorPage() {
   // const { name, doctorId } = router.query;
 
   useEffect(() => {
+    if (window.FB) {
+      window.FB.XFBML.parse();
+    }
+  }, []);
+
+  useEffect(() => {
     if (router.isReady) {
       const getDoctor = async () => {
         const { name, doctorId } = router.query;
@@ -89,6 +95,14 @@ export default function DoctorPage() {
               ></p>
             </div>
           </div>
+
+          {/* <div id="fb-root"></div> */}
+          <div
+            className="fb-comments"
+            data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+            data-width=""
+            data-numposts="10"
+          ></div>
         </div>
       </main>
       <FooterGeneric />

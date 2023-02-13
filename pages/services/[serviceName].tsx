@@ -37,6 +37,12 @@ export default function DoctorPage() {
   const router = useRouter();
 
   useEffect(() => {
+    if (window.FB) {
+      window.FB.XFBML.parse();
+    }
+  }, []);
+
+  useEffect(() => {
     if (router.isReady) {
       const getService = async () => {
         const { name, articleId } = router.query;
@@ -95,6 +101,18 @@ export default function DoctorPage() {
             </div>
           </section>
 
+          <section className="facebook_plugin">
+            <div
+              className="fb-like"
+              data-href="https://developers.facebook.com/docs/plugins/"
+              data-width=""
+              data-layout="button_count"
+              data-action="like"
+              data-size="small"
+              data-share="true"
+            ></div>
+          </section>
+
           <section className={styles.service}>
             <h2 className={styles.postQA}>
               {service?.attributes.postTitle + " Q & A"}
@@ -104,6 +122,16 @@ export default function DoctorPage() {
               dangerouslySetInnerHTML={{
                 __html: service?.attributes.postBody,
               }}
+            ></div>
+          </section>
+          {/* <div id="fb-root"></div> */}
+
+          <section className="facebook_plugin">
+            <div
+              className="fb-comments"
+              data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+              data-width=""
+              data-numposts="10"
             ></div>
           </section>
         </div>
