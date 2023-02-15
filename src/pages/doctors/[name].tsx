@@ -9,7 +9,7 @@ import {
   photoUrlLocal,
 } from "env";
 import LocaleContext from "@context/languageContext";
-import { LocaleContextType } from "@src/shared/types/schema/LocaleContextType";
+import { LocaleContextType } from "@schema/LocaleContextType";
 import FooterGeneric from "@components/FooterGeneric";
 import SocialMediaShare from "@components/SocialMediaShare";
 import { Doctor } from "@models/Doctor";
