@@ -1,14 +1,15 @@
 import { useRouter } from "next/router";
 
 import { isProd, apiUrlProd, apiUrlLocal } from "../env";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import LocaleContext from "../context/languageContext";
 import { Doctor } from "./models/Doctor";
 import DoctorItem from "../components/DoctorItem";
 import styles from "../styles/DoctorList.module.css";
 
 const doctorsPath = "/doctors?populate=*";
 
-const fetchDoctors = async () => {
+const fetchDoctors = async (currentLocale: string) => {
   var requestOptions: RequestInit = {
     method: "GET",
     redirect: "follow",
@@ -22,6 +23,7 @@ const fetchDoctors = async () => {
   }
 
   tempBaseUrl += doctorsPath;
+  tempBaseUrl += `&locale=${currentLocale}`;
 
   const res = await fetch(tempBaseUrl, requestOptions);
   const data = await res.json();
@@ -35,14 +37,16 @@ function doctorClicked(name: string) {
 const DoctorList = () => {
   const [doctors, setDoctors] = useState<[Doctor]>();
 
+  const { currentLocale } = useContext(LocaleContext);
+
   useEffect(() => {
     const getDoctors = async () => {
-      const doctorsList = await fetchDoctors();
+      const doctorsList = await fetchDoctors(currentLocale);
       setDoctors(doctorsList);
     };
 
     getDoctors();
-  }, []);
+  }, [currentLocale]);
 
   const router = useRouter();
 
