@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useState, useEffect, useContext } from "react";
 import { isProd, apiUrlProd, apiUrlLocal } from "env";
 import LocaleContext from "@context/languageContext";
+import { LocaleContextType } from "@schema/LocaleContextType";
 import { Doctor } from "@src/data/models/Doctor";
 import DoctorItem from "@components/DoctorItem";
 import styles from "@styles/DoctorList.module.css";
@@ -37,7 +38,7 @@ function doctorClicked(name: string) {
 const DoctorList = () => {
   const [doctors, setDoctors] = useState<[Doctor]>();
 
-  const { currentLocale } = useContext(LocaleContext);
+  const { currentLocale } = useContext(LocaleContext) as LocaleContextType;
 
   useEffect(() => {
     const getDoctors = async () => {

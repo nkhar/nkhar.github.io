@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { useContext } from "react";
 import LocaleContext from "@context/languageContext";
+import { LocaleContextType } from "@schema/LocaleContextType";
 import navStyles from "@styles/Nav.module.css";
 
 const Nav = () => {
-  const { currentLocale, setCurrentLocale } = useContext(LocaleContext);
+  const { currentLocale, setCurrentLocale } = useContext(
+    LocaleContext
+  ) as LocaleContextType;
 
   const handleLanguageClick = (clickedLanguage: string) => {
     if (currentLocale == clickedLanguage) {

@@ -2,6 +2,7 @@ import { isProd, apiUrlProd, apiUrlLocal } from "env";
 import { useState, useEffect, useContext } from "react";
 import LocaleContext from "@context/languageContext";
 import styles from "@styles/AboutUs.module.css";
+import { LocaleContextType } from "@src/shared/types/schema/LocaleContextType";
 
 const fetchAboutUs = async (currentLocale: string) => {
   var requestOptions: RequestInit = {
@@ -28,7 +29,7 @@ const fetchAboutUs = async (currentLocale: string) => {
 const AboutUs = () => {
   const [info, setInfo] = useState<string>("");
 
-  const { currentLocale } = useContext(LocaleContext);
+  const { currentLocale } = useContext(LocaleContext) as LocaleContextType;
 
   useEffect(() => {
     const getAboutUs = async () => {

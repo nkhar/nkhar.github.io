@@ -1,26 +1,14 @@
-// import { createContext, useContext } from "react";
+import { createContext, useState, ReactNode } from "react";
+import { LocaleContextType } from "@schema/LocaleContextType";
 
-// const AppContext = createContext();
+interface Props {
+  children?: ReactNode;
+  // any props that come into the component
+}
 
-// export function AppWrapper({ children }) {
-//   let sharedState = {
-//     /* whatever you want */
-//   };
+const LocaleContext = createContext<LocaleContextType | null>(null);
 
-//   return (
-//     <AppContext.Provider value={sharedState}>{children}</AppContext.Provider>
-//   );
-// }
-
-// export function useAppContext() {
-//   return useContext(AppContext);
-// }
-
-import { createContext, useState } from "react";
-
-const LocaleContext = createContext();
-
-export const LocaleProvider = ({ children }) => {
+export const LocaleProvider = ({ children }: Props) => {
   const [currentLocale, setCurrentLocale] = useState("ka");
 
   return (
