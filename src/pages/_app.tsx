@@ -3,6 +3,15 @@ import type { AppProps } from "next/app";
 import { LocaleProvider } from "@context/languageContext";
 import "@styles/globals.css";
 
+declare global {
+  interface Window {
+    FB: any;
+    fbAsyncInit: () => void;
+  }
+}
+
+// let FB = window.FB; // ok now
+
 export default function App({ Component, pageProps }: AppProps) {
   const initFacebookSDK = () => {
     window.fbAsyncInit = function () {
@@ -19,10 +28,10 @@ export default function App({ Component, pageProps }: AppProps) {
       var js,
         fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
-      js = d.createElement(s);
+      js = d.createElement(s) as HTMLScriptElement;
       js.id = id;
       js.src = `//connect.facebook.net/en_US/sdk.js`;
-      fjs.parentNode.insertBefore(js, fjs);
+      fjs.parentNode?.insertBefore(js, fjs);
     })(document, "script", "facebook-jssdk");
   };
 
