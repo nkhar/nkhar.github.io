@@ -1,6 +1,6 @@
-import { isProd, photoUrlProd, photoUrlLocal } from "../env";
-import { Doctor } from "./models/Doctor";
-import styles from "../styles/DoctorItem.module.css";
+import { isProd, photoUrlProd, photoUrlLocal } from "env";
+import { Doctor } from "@src/data/models/Doctor";
+import styles from "@styles/DoctorItem.module.css";
 
 const DoctorItem = (props: any) => {
   const doctor: Doctor = props.doctor;

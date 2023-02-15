@@ -1,5 +1,5 @@
-import styles from "../styles/DashboardHeader.module.css";
-import Nav from "../components/Nav";
+import styles from "@styles/DashboardHeader.module.css";
+import Nav from "./Nav";
 
 const DashboardHeader = () => {
   return (

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useContext } from "react";
-import LocaleContext from "../context/languageContext";
-import navStyles from "../styles/Nav.module.css";
+import LocaleContext from "@context/languageContext";
+import navStyles from "@styles/Nav.module.css";
 
 const Nav = () => {
   const { currentLocale, setCurrentLocale } = useContext(LocaleContext);

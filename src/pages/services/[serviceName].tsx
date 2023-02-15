@@ -7,11 +7,11 @@ import {
   apiUrlLocal,
   photoUrlProd,
   photoUrlLocal,
-} from "../../env";
-import FooterGeneric from "../../components/FooterGeneric";
-import SocialMediaShare from "../../components/SocialMediaShare";
-import { Service } from "../../components/models/Service";
-import styles from "../../styles/ServicePage.module.css";
+} from "env";
+import FooterGeneric from "@components/FooterGeneric";
+import SocialMediaShare from "@components/SocialMediaShare";
+import { Service } from "@models/Service";
+import styles from "@styles/ServicePage.module.css";
 
 const fetchService = async (articleId: string) => {
   var requestOptions: RequestInit = {

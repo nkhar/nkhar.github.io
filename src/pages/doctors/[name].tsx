@@ -1,18 +1,18 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState, useEffect, useContext } from "react";
-import LocaleContext from "../../context/languageContext";
 import {
   isProd,
   apiUrlProd,
   apiUrlLocal,
   photoUrlProd,
   photoUrlLocal,
-} from "../../env";
-import FooterGeneric from "../../components/FooterGeneric";
-import SocialMediaShare from "../../components/SocialMediaShare";
-import { Doctor } from "../../components/models/Doctor";
-import styles from "../../styles/DoctorPage.module.css";
+} from "env";
+import LocaleContext from "@context/languageContext";
+import FooterGeneric from "@components/FooterGeneric";
+import SocialMediaShare from "@components/SocialMediaShare";
+import { Doctor } from "@models/Doctor";
+import styles from "@styles/DoctorPage.module.css";
 
 const fetchDoctor = async (id: string, currentLocale: string) => {
   var requestOptions: RequestInit = {

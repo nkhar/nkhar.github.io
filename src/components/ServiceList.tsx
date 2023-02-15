@@ -1,8 +1,8 @@
-import { isProd, apiUrlProd, apiUrlLocal } from "../env";
 import { useState, useEffect } from "react";
-import { Service } from "./models/Service";
-import ServiceItem from "../components/ServiceItem";
-import styles from "../styles/ServiceList.module.css";
+import { isProd, apiUrlProd, apiUrlLocal } from "env";
+import { Service } from "@src/data/models/Service";
+import ServiceItem from "@components/ServiceItem";
+import styles from "@styles/ServiceList.module.css";
 
 const servicesPath = "/services?populate=*";
 

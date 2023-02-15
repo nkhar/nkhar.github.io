@@ -1,6 +1,5 @@
-import styles from "../styles/FooterGeneric.module.css";
-
-const FooterGeneric = () => {
+import styles from "@styles/Footer.module.css";
+const Footer = () => {
   return (
     <footer className={styles.actual_footer}>
       <div className={styles.footer_wrapper}>
@@ -15,4 +14,4 @@ const FooterGeneric = () => {
   );
 };
 
-export default FooterGeneric;
+export default Footer;

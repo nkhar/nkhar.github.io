@@ -1,9 +1,7 @@
-import { isProd, photoUrlProd, photoUrlLocal } from "../env";
-
 import Link from "next/link";
-
-import { Service } from "./models/Service";
-import styles from "../styles/ServiceItem.module.css";
+import { isProd, photoUrlProd, photoUrlLocal } from "env";
+import { Service } from "@src/data/models/Service";
+import styles from "@styles/ServiceItem.module.css";
 
 const ServiceItem = (props: any) => {
   const service: Service = props.service;

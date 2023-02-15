@@ -1,11 +1,11 @@
 import { useRouter } from "next/router";
 
-import { isProd, apiUrlProd, apiUrlLocal } from "../env";
 import { useState, useEffect, useContext } from "react";
-import LocaleContext from "../context/languageContext";
-import { Doctor } from "./models/Doctor";
-import DoctorItem from "../components/DoctorItem";
-import styles from "../styles/DoctorList.module.css";
+import { isProd, apiUrlProd, apiUrlLocal } from "env";
+import LocaleContext from "@context/languageContext";
+import { Doctor } from "@src/data/models/Doctor";
+import DoctorItem from "@components/DoctorItem";
+import styles from "@styles/DoctorList.module.css";
 
 const doctorsPath = "/doctors?populate=*";
 

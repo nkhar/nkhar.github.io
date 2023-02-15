@@ -1,4 +1,4 @@
-import styles from "../styles/MapFrame.module.css";
+import styles from "@styles/MapFrame.module.css";
 
 const MapFrame = () => {
   return (

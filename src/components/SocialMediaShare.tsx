@@ -8,7 +8,7 @@ import {
   faReddit,
 } from "@fortawesome/free-brands-svg-icons";
 
-import styles from "../styles/SocialMediaShare.module.css";
+import styles from "@styles/SocialMediaShare.module.css";
 
 const SocialMediaShare = () => {
   const [state, setState] = useState({

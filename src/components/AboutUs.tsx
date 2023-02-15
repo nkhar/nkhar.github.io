@@ -1,7 +1,7 @@
-import { isProd, apiUrlProd, apiUrlLocal } from "../env";
+import { isProd, apiUrlProd, apiUrlLocal } from "env";
 import { useState, useEffect, useContext } from "react";
-import LocaleContext from "../context/languageContext";
-import styles from "../styles/AboutUs.module.css";
+import LocaleContext from "@context/languageContext";
+import styles from "@styles/AboutUs.module.css";
 
 const fetchAboutUs = async (currentLocale: string) => {
   var requestOptions: RequestInit = {
