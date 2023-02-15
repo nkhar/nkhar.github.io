@@ -38,7 +38,7 @@ export default function DoctorPage() {
   const router = useRouter();
   // const { name, doctorId } = router.query;
 
-  const currentLocale = useContext(LocaleContext);
+  const { currentLocale } = useContext(LocaleContext);
 
   useEffect(() => {
     if (window.FB) {
