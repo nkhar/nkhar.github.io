@@ -9,6 +9,7 @@ import {
   photoUrlLocal,
 } from "env";
 import LocaleContext from "@context/languageContext";
+import { LocaleContextType } from "@src/shared/types/schema/LocaleContextType";
 import FooterGeneric from "@components/FooterGeneric";
 import SocialMediaShare from "@components/SocialMediaShare";
 import { Doctor } from "@models/Doctor";
@@ -38,7 +39,7 @@ export default function DoctorPage() {
   const router = useRouter();
   // const { name, doctorId } = router.query;
 
-  const { currentLocale } = useContext(LocaleContext);
+  const { currentLocale } = useContext(LocaleContext) as LocaleContextType;
 
   useEffect(() => {
     if (window.FB) {
