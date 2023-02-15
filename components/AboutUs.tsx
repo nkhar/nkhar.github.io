@@ -1,8 +1,9 @@
 import { isProd, apiUrlProd, apiUrlLocal } from "../env";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import LocaleContext from "../context/languageContext";
 import styles from "../styles/AboutUs.module.css";
 
-const fetchAboutUs = async () => {
+const fetchAboutUs = async (currentLocale: string) => {
   var requestOptions: RequestInit = {
     method: "GET",
     redirect: "follow",
@@ -10,9 +11,9 @@ const fetchAboutUs = async () => {
 
   var tempBaseUrl = "";
   if (isProd) {
-    tempBaseUrl = `${apiUrlProd}/about-us?populate=*`;
+    tempBaseUrl = `${apiUrlProd}/about-us?populate=*&locale=${currentLocale}`;
   } else {
-    tempBaseUrl = `${apiUrlLocal}/about-us?populate=*`;
+    tempBaseUrl = `${apiUrlLocal}/about-us?populate=*&locale=${currentLocale}`;
   }
 
   const res = await fetch(tempBaseUrl, requestOptions);
@@ -27,14 +28,16 @@ const fetchAboutUs = async () => {
 const AboutUs = () => {
   const [info, setInfo] = useState<string>("");
 
+  const { currentLocale } = useContext(LocaleContext);
+
   useEffect(() => {
     const getAboutUs = async () => {
-      const aboutUsFromServer: string = await fetchAboutUs();
+      const aboutUsFromServer: string = await fetchAboutUs(currentLocale);
       setInfo(aboutUsFromServer);
     };
 
     getAboutUs();
-  }, []);
+  }, [currentLocale]);
 
   const rawMarkup = () => {
     var rawMarkup = info;

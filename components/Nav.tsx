@@ -1,7 +1,19 @@
 import Link from "next/link";
+import { useContext } from "react";
+import LocaleContext from "../context/languageContext";
 import navStyles from "../styles/Nav.module.css";
 
 const Nav = () => {
+  const { currentLocale, setCurrentLocale } = useContext(LocaleContext);
+
+  const handleLanguageClick = (clickedLanguage: string) => {
+    if (currentLocale == clickedLanguage) {
+      return;
+    } else {
+      setCurrentLocale(clickedLanguage);
+    }
+  };
+
   return (
     <nav className={navStyles.actual_nav}>
       <Link href="#" className={navStyles.link} local-link="main">
@@ -25,17 +37,29 @@ const Nav = () => {
       <div className={navStyles.languages}>
         <div className={"georgian ".concat("active")}>
           <a href="#" lang="georgian">
-            <img src="/images/language-georgia.png" alt="" />
+            <img
+              src="/images/language-georgia.png"
+              alt=""
+              onClick={() => handleLanguageClick("ka")}
+            />
           </a>
         </div>
         <div className={navStyles.english}>
           <a href="#" lang="english">
-            <img src="/images/language-britain.png" alt="" />
+            <img
+              src="/images/language-britain.png"
+              alt=""
+              onClick={() => handleLanguageClick("en")}
+            />
           </a>
         </div>
         <div className={navStyles.russian}>
           <a href="#" lang="russian">
-            <img src="/images/language-russia.png" alt="" />
+            <img
+              src="/images/language-russia.png"
+              alt=""
+              onClick={() => handleLanguageClick("ru")}
+            />
           </a>
         </div>
       </div>

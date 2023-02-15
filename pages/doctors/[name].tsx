@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import LocaleContext from "../../context/languageContext";
 import {
   isProd,
   apiUrlProd,
@@ -13,7 +14,7 @@ import SocialMediaShare from "../../components/SocialMediaShare";
 import { Doctor } from "../../components/models/Doctor";
 import styles from "../../styles/DoctorPage.module.css";
 
-const fetchDoctor = async (id: string) => {
+const fetchDoctor = async (id: string, currentLocale: string) => {
   var requestOptions: RequestInit = {
     method: "GET",
     redirect: "follow",
@@ -21,9 +22,9 @@ const fetchDoctor = async (id: string) => {
 
   var tempBaseUrl = "";
   if (isProd) {
-    tempBaseUrl = `${apiUrlProd}/doctors/${id}?populate=*`;
+    tempBaseUrl = `${apiUrlProd}/doctors/${id}?populate=*&locale=${currentLocale}`;
   } else {
-    tempBaseUrl = `${apiUrlLocal}/doctors/${id}?populate=*`;
+    tempBaseUrl = `${apiUrlLocal}/doctors/${id}?populate=*&locale=${currentLocale}`;
   }
 
   const res = await fetch(tempBaseUrl, requestOptions);
@@ -37,6 +38,8 @@ export default function DoctorPage() {
   const router = useRouter();
   // const { name, doctorId } = router.query;
 
+  const currentLocale = useContext(LocaleContext);
+
   useEffect(() => {
     if (window.FB) {
       window.FB.XFBML.parse();
@@ -48,7 +51,7 @@ export default function DoctorPage() {
       const getDoctor = async () => {
         const { name, doctorId } = router.query;
         if (!doctorId) return null;
-        const doctor = await fetchDoctor(doctorId as string);
+        const doctor = await fetchDoctor(doctorId as string, currentLocale);
         setDoctor(doctor);
       };
 

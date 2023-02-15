@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
+import { LocaleProvider } from "../context/languageContext";
 
 export default function App({ Component, pageProps }: AppProps) {
   const initFacebookSDK = () => {
@@ -29,5 +30,9 @@ export default function App({ Component, pageProps }: AppProps) {
     initFacebookSDK();
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <LocaleProvider>
+      <Component {...pageProps} />
+    </LocaleProvider>
+  );
 }
