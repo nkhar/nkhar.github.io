@@ -3,13 +3,6 @@ import type { AppProps } from "next/app";
 import { LocaleProvider } from "@context/languageContext";
 import "@styles/globals.css";
 
-declare global {
-  interface Window {
-    FB: any;
-    fbAsyncInit: () => void;
-  }
-}
-
 // let FB = window.FB; // ok now
 
 export default function App({ Component, pageProps }: AppProps) {
