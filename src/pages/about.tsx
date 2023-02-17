@@ -6,7 +6,7 @@ import WhiteSpace80 from "@src/components/WhiteSpace80";
 export default function About() {
   return (
     <>
-      <Nav />
+      <Nav isBlackBackground={true} />
       <AboutUs />
       <WhiteSpace80 />
       <Footer />

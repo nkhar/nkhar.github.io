@@ -8,6 +8,10 @@
   padding: 30px;
 }
 
+.black_background {
+  background-color: rgb(46, 49, 144);
+}
+
 .main_logo_link img {
   width: 80px;
   height: 80px;

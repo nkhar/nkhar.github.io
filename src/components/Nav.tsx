@@ -4,7 +4,7 @@ import LocaleContext from "@context/languageContext";
 import { LocaleContextType } from "@schema/LocaleContextType";
 import navStyles from "@styles/Nav.module.css";
 
-const Nav = () => {
+const Nav = ({ isBlackBackground = false }) => {
   const { currentLocale, setCurrentLocale } = useContext(
     LocaleContext
   ) as LocaleContextType;
@@ -17,8 +17,13 @@ const Nav = () => {
     }
   };
 
+  let classNameForNav = navStyles.actual_nav;
+  if (isBlackBackground) {
+    classNameForNav += " " + navStyles.black_background;
+  }
+
   return (
-    <nav className={navStyles.actual_nav}>
+    <nav className={classNameForNav}>
       <Link href="/" className={navStyles.link} local-link="main">
         <div className={navStyles.main_logo_link}>
           <img src="/gfai_logo.ico" />
