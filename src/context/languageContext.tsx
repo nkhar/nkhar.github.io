@@ -9,7 +9,7 @@ interface Props {
 const LocaleContext = createContext<LocaleContextType | null>(null);
 
 export const LocaleProvider = ({ children }: Props) => {
-  const [currentLocale, setCurrentLocale] = useState("ka");
+  const [currentLocale, setCurrentLocale] = useState("en");
 
   return (
     <LocaleContext.Provider
