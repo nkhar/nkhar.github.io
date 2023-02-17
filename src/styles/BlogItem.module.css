@@ -10,6 +10,10 @@
   margin-top: 50px;
 }
 
+.blog_item:hover {
+  cursor: pointer;
+}
+
 .blog_item_info {
   display: flex;
   align-items: center;

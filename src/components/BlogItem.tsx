@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { useRouter } from "next/router";
 import { isProd, photoUrlProd, photoUrlLocal } from "env";
 import { BlogPost } from "@src/data/models/BlogPost";
 import styles from "@styles/BlogItem.module.css";
@@ -11,8 +11,22 @@ const BlogItem = (props: any) => {
   } else {
     tempPhotoUrl = photoUrlLocal;
   }
+
+  const router = useRouter();
+
+  const handleClick = (name: string, id: number) => {
+    const href = `/blog/${name}?blogPostId=${id}`;
+    router.push(href);
+  };
+
   return (
-    <li className={styles.blog_item} key={blogPost.id}>
+    <li
+      className={styles.blog_item}
+      key={blogPost.id}
+      onClick={() =>
+        handleClick(blogPost.attributes.blogPostTitle, Number(blogPost.id))
+      }
+    >
       <div className={styles.blog_item_info}>
         <img
           src={
@@ -32,11 +46,7 @@ const BlogItem = (props: any) => {
         </div>
       </div>
 
-      <Link
-        href={`/blog/${blogPost.attributes.blogPostTitle}?blogPostId=${blogPost.id}`}
-      >
-        <p className={styles.blog_item_read_more}>Read More</p>
-      </Link>
+      <p className={styles.blog_item_read_more}>Read More</p>
     </li>
   );
 };
