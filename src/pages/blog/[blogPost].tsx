@@ -17,7 +17,7 @@ import WhiteSpace80 from "@src/components/WhiteSpace80";
 import { BlogPost } from "@src/data/models/BlogPost";
 import styles from "@styles/BlogPostPage.module.css";
 
-const fetchBlogPost = async (id: string, currentLocale: string) => {
+const fetchBlogPost = async (id: string) => {
   var requestOptions: RequestInit = {
     method: "GET",
     redirect: "follow",
@@ -35,8 +35,24 @@ const fetchBlogPost = async (id: string, currentLocale: string) => {
   return data.data;
 };
 
+type BlogPostLocaleType = {
+  seoKeyWords: string;
+  blogPostTitle: string;
+  blogPostBody: string;
+};
+
+const getSelectedLocale = (currentLocale: string, blogPost: BlogPost) => {
+  const localeArray = blogPost?.attributes.localizations.data;
+  const selectedLocale = localeArray?.find(
+    (locale) => locale.attributes.locale == currentLocale
+  );
+  return selectedLocale;
+};
+
 const BlogPostPage = () => {
   const [blogPost, setBlogPost] = useState<BlogPost>();
+  const [blogPostLocale, setBlogPostLocale] = useState<BlogPostLocaleType>();
+
   const router = useRouter();
   // const { name, doctorId } = router.query;
 
@@ -53,11 +69,23 @@ const BlogPostPage = () => {
       const getBlogPost = async () => {
         const { blogPostTitle, blogPostId } = router.query;
         if (!blogPostId) return null;
-        const blogPost = await fetchBlogPost(
-          blogPostId as string,
-          currentLocale
-        );
+        const blogPost = await fetchBlogPost(blogPostId as string);
         setBlogPost(blogPost);
+
+        const tempLocale = getSelectedLocale(currentLocale, blogPost);
+        if (tempLocale != null) {
+          setSelectedLocale(
+            tempLocale.attributes.seoKeyWords,
+            tempLocale.attributes.blogPostTitle,
+            tempLocale.attributes.blogPostBody
+          );
+        } else if (currentLocale == "en") {
+          setSelectedLocale(
+            blogPost.attributes.seoKeyWords,
+            blogPost.attributes.blogPostTitle,
+            blogPost.attributes.blogPostBody
+          );
+        }
       };
 
       getBlogPost();
@@ -71,19 +99,44 @@ const BlogPostPage = () => {
     tempPhotoUrl = photoUrlLocal;
   }
 
-  let blogPostTitle = blogPost?.attributes.blogPostTitle;
-  let blogPostIconUrl =
-    tempPhotoUrl + blogPost?.attributes.blogPostIcon.data.attributes.url;
-  let blogPostBody = blogPost?.attributes.blogPostBody;
-  let facebookSdkId = blogPost?.attributes.facebookSdkId;
+  useEffect(() => {
+    const selectedLocale = getSelectedLocale(currentLocale, blogPost!!);
+    if (selectedLocale != null) {
+      console.log("locale has changed");
+      setSelectedLocale(
+        selectedLocale.attributes.seoKeyWords,
+        selectedLocale.attributes.blogPostTitle,
+        selectedLocale.attributes.blogPostBody
+      );
+    } else if (currentLocale == "en") {
+      if (blogPost != null) {
+        setSelectedLocale(
+          blogPost.attributes.seoKeyWords,
+          blogPost.attributes.blogPostTitle,
+          blogPost.attributes.blogPostBody
+        );
+      }
+    }
+  }, [currentLocale]);
 
-  useEffect(() => {}, [currentLocale]);
+  const setSelectedLocale = (
+    seoKeyWords: string,
+    blogPostTitle: string,
+    blogPostBody: string
+  ) => {
+    const tempLocaleBlogPost = {
+      seoKeyWords,
+      blogPostTitle,
+      blogPostBody,
+    } as BlogPostLocaleType;
+    setBlogPostLocale(tempLocaleBlogPost);
+  };
 
   return (
     <>
       <Head>
-        <title>{blogPostTitle}</title>
-        <meta name="description" content={blogPost?.attributes.seoKeyWords} />
+        <title>{blogPostLocale?.blogPostTitle}</title>
+        <meta name="description" content={blogPostLocale?.seoKeyWords} />
         <link rel="icon" href="/gfai_logo.ico" />
       </Head>
       <Nav isBlackBackground={true} />
@@ -93,17 +146,23 @@ const BlogPostPage = () => {
           <SocialMediaShare />
 
           <div className={styles.blogpost_title}>
-            <h1>{blogPostTitle}</h1>
-            <img src={blogPostIconUrl} />
+            <h1>{blogPostLocale?.blogPostTitle}</h1>
+            <img
+              src={
+                tempPhotoUrl +
+                blogPost?.attributes.blogPostIcon.data.attributes.url
+              }
+            />
           </div>
 
           <div className={styles.blogpost_body}>
             <p
               dangerouslySetInnerHTML={{
-                __html: blogPostBody,
+                __html: blogPostLocale ? blogPostLocale.blogPostBody : "",
               }}
             ></p>
           </div>
+          <WhiteSpace80 />
           <div
             className="fb-comments"
             data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
@@ -112,7 +171,6 @@ const BlogPostPage = () => {
           ></div>
         </div>
       </main>
-      <WhiteSpace80 />
       <FooterGeneric />
     </>
   );
