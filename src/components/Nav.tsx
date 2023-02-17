@@ -32,12 +32,17 @@ const Nav = ({ isBlackBackground = false }) => {
       <Link href="/about" className={navStyles.link} local-link="about">
         Our story
       </Link>
+      <Link
+        href="/doctors"
+        className={navStyles.link}
+        local-link="testimonials"
+      >
+        Doctors
+      </Link>
       <a className={navStyles.link} local-link="services">
         Services
       </a>
-      <a className={navStyles.link} local-link="testimonials">
-        Testimonials
-      </a>
+
       <a className={navStyles.link} local-link="contact">
         Contact
       </a>
