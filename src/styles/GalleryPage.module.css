@@ -1,0 +1,18 @@
+.container {
+  /* width: 90%; */
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.images_list {
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.image_item img {
+  width: 400px;
+  height: 400px;
+}
