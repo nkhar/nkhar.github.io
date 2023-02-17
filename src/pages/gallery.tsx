@@ -1,4 +1,7 @@
 import Head from "next/head";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { useState, useEffect, useContext } from "react";
 import { isProd, apiUrlProd, apiUrlLocal } from "env";
 import { PictureCollection } from "@src/data/models/PictureCollection";
@@ -30,6 +33,20 @@ const fetchPictures = async () => {
   return data.data;
 };
 
+const settings = {
+  swipeToSlide: true,
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+
+  autoplay: true,
+  autoplaySpeed: 2000,
+  cssEase: "linear",
+  pauseOnHover: true,
+};
+
 const gallery = () => {
   const [pictures, setPictures] = useState<PictureCollection>();
 
@@ -56,6 +73,17 @@ const gallery = () => {
         <link rel="icon" href="/gfai_logo.ico" />
       </Head>
       <Nav isBlackBackground={true} />
+      {/* <div className="card">
+        <div className="card-top"></div>
+        <div className="card-bottom"></div>
+      </div> */}
+      <Slider {...settings}>
+        {pictures?.attributes.sliderImages.data.map((pictureItem) => (
+          <div className={styles.image_card}>
+            <img src={pictureItem.attributes.url} />
+          </div>
+        ))}
+      </Slider>
       <section className={styles.container}>
         <ul className={styles.images_list}>{pictureItems}</ul>
       </section>
