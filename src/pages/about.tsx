@@ -1,9 +1,15 @@
-import styles from "@styles/Home.module.css";
+import AboutUs from "@src/components/AboutUs";
+import Nav from "@src/components/Nav";
+import Footer from "@src/components/Footer";
+import WhiteSpace80 from "@src/components/WhiteSpace80";
 
 export default function About() {
   return (
-    <h1 className={styles.title}>
-      Learn <a href="https://nextjs.org">Next.js!</a>
-    </h1>
+    <>
+      <Nav />
+      <AboutUs />
+      <WhiteSpace80 />
+      <Footer />
+    </>
   );
 }

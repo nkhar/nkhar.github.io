@@ -19,14 +19,14 @@ const Nav = () => {
 
   return (
     <nav className={navStyles.actual_nav}>
-      <Link href="#" className={navStyles.link} local-link="main">
+      <Link href="/" className={navStyles.link} local-link="main">
         <div className={navStyles.main_logo_link}>
           <img src="/gfai_logo.ico" />
         </div>
       </Link>
-      <a className={navStyles.link} local-link="about">
+      <Link href="/about" className={navStyles.link} local-link="about">
         Our story
-      </a>
+      </Link>
       <a className={navStyles.link} local-link="services">
         Services
       </a>
