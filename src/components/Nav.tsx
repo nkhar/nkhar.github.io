@@ -39,9 +39,9 @@ const Nav = ({ isBlackBackground = false }) => {
       >
         Doctors
       </Link>
-      <a className={navStyles.link} local-link="services">
+      <Link href="/services" className={navStyles.link} local-link="services">
         Services
-      </a>
+      </Link>
 
       <a className={navStyles.link} local-link="contact">
         Contact

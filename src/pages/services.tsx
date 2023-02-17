@@ -1,17 +1,17 @@
-import DoctorList from "@src/components/DoctorList";
+import ServiceList from "@src/components/ServiceList";
 import Nav from "@src/components/Nav";
 import Footer from "@src/components/Footer";
 import WhiteSpace80 from "@src/components/WhiteSpace80";
 
-const doctors = () => {
+const services = () => {
   return (
     <>
       <Nav isBlackBackground={true} />
-      <DoctorList />
+      <ServiceList />
       <WhiteSpace80 />
       <Footer />
     </>
   );
 };
 
-export default doctors;
+export default services;
