@@ -5,6 +5,8 @@
   border: 1px solid #d7dfe2;
   padding-right: 50px;
   padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-top: 50px;
 }
 
@@ -33,7 +35,6 @@
 .blog_item_read_more {
   color: rgb(255, 255, 255);
   font-size: 20px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
   text-align: end;
 }

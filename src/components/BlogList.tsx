@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { isProd, apiUrlProd, apiUrlLocal } from "env";
 import BlogItem from "@components/BlogItem";
 import { BlogPost } from "@src/data/models/BlogPost";
+import LocaleContext from "@context/languageContext";
+import { LocaleContextType } from "@schema/LocaleContextType";
 import styles from "@styles/BlogList.module.css";
 
 const blogPostsPath = "/blog-posts?populate=*";
 
-const fetchBlogPosts = async () => {
+const fetchBlogPosts = async (currentLocale: string) => {
   var requestOptions: RequestInit = {
     method: "GET",
     redirect: "follow",
@@ -20,6 +22,7 @@ const fetchBlogPosts = async () => {
   }
 
   tempBaseUrl += blogPostsPath;
+  tempBaseUrl += `&locale=${currentLocale}`;
 
   const res = await fetch(tempBaseUrl, requestOptions);
   const data = await res.json();
@@ -29,14 +32,16 @@ const fetchBlogPosts = async () => {
 const BlogList = () => {
   const [blogPosts, setBlogPosts] = useState<[BlogPost]>();
 
+  const { currentLocale } = useContext(LocaleContext) as LocaleContextType;
+
   useEffect(() => {
     const getBlogPosts = async () => {
-      const blogPostsList = await fetchBlogPosts();
+      const blogPostsList = await fetchBlogPosts(currentLocale);
       setBlogPosts(blogPostsList);
     };
 
     getBlogPosts();
-  }, []);
+  }, [currentLocale]);
 
   const blogPostItems = blogPosts?.map((blogPostItem: BlogPost) => (
     <BlogItem blogPost={blogPostItem} />
