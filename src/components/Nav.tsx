@@ -32,20 +32,16 @@ const Nav = ({ isBlackBackground = false }) => {
       <Link href="/about" className={navStyles.link} local-link="about">
         Our story
       </Link>
-      <Link
-        href="/doctors"
-        className={navStyles.link}
-        local-link="testimonials"
-      >
+      <Link href="/doctors" className={navStyles.link} local-link="doctors">
         Doctors
       </Link>
       <Link href="/services" className={navStyles.link} local-link="services">
         Services
       </Link>
 
-      <a className={navStyles.link} local-link="contact">
+      <Link href="/contact" className={navStyles.link} local-link="contact">
         Contact
-      </a>
+      </Link>
 
       <div className={navStyles.languages}>
         <div className={"georgian ".concat("active")}>
