@@ -35,6 +35,11 @@ const fetchBlogPost = async (id: string) => {
   return data.data;
 };
 
+const origin =
+  typeof window !== "undefined" && window.location.origin
+    ? window.location.origin
+    : "";
+
 type BlogPostLocaleType = {
   seoKeyWords: string;
   blogPostTitle: string;
@@ -49,6 +54,14 @@ const getSelectedLocale = (currentLocale: string, blogPost: BlogPost) => {
   return selectedLocale;
 };
 
+const parseWindow = () => {
+  // setTimeout(() => {
+  if (window.FB) {
+    window.FB.XFBML.parse();
+  }
+  // }, 5);
+};
+
 const BlogPostPage = () => {
   const [blogPost, setBlogPost] = useState<BlogPost>();
   const [blogPostLocale, setBlogPostLocale] = useState<BlogPostLocaleType>();
@@ -58,11 +71,9 @@ const BlogPostPage = () => {
 
   const { currentLocale } = useContext(LocaleContext) as LocaleContextType;
 
-  useEffect(() => {
-    if (window.FB) {
-      window.FB.XFBML.parse();
-    }
-  }, []);
+  // useEffect(() => {
+  //   parseWindow();
+  // }, []);
 
   useEffect(() => {
     if (router.isReady) {
@@ -86,6 +97,8 @@ const BlogPostPage = () => {
             blogPost.attributes.blogPostBody
           );
         }
+
+        parseWindow();
       };
 
       getBlogPost();
@@ -144,7 +157,6 @@ const BlogPostPage = () => {
       <main>
         <div className={styles.main_container}>
           <SocialMediaShare />
-
           <div className={styles.blogpost_title}>
             <h1>{blogPostLocale?.blogPostTitle}</h1>
             <img
@@ -154,7 +166,6 @@ const BlogPostPage = () => {
               }
             />
           </div>
-
           <div className={styles.blogpost_body}>
             <p
               dangerouslySetInnerHTML={{
@@ -163,12 +174,21 @@ const BlogPostPage = () => {
             ></p>
           </div>
           <WhiteSpace80 />
-          <div
-            className="fb-comments"
-            data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
-            data-width=""
-            data-numposts="10"
-          ></div>
+
+          {blogPost && (
+            <div
+              className="fb-comments"
+              // data-href={origin + "/blog/" + blogPost?.attributes.facebookSdkId}
+              // data-href={windowHref}
+              data-href={
+                "https://georgianfoot.com" +
+                "/blog/" +
+                blogPost?.attributes.facebookSdkId
+              }
+              data-width=""
+              data-numposts="10"
+            ></div>
+          )}
         </div>
       </main>
       <FooterGeneric />
