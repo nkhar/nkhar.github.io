@@ -1,6 +1,7 @@
 export const isProd = true;
 
-export const apiUrlProd = "https://gfai-cms.up.railway.app/api";
+// export const apiUrlProd = "https://gfai-cms.up.railway.app/api";
+export const apiUrlProd = "https://admin.georgianfoot.com/api";
 export const apiUrlLocal = "http://localhost:1337/api";
 
 export const photoUrlProd = "";
